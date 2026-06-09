@@ -227,32 +227,45 @@ ul {
   justify-content: flex-end;
   padding-bottom: 60px;
   padding-left: 32px;
+  /* border: #ff8800 1px solid; */
+  z-index: 4;
 }
 
 .object-cube,
 .object-worm {
   /* dimensions sized for the 3-D images that come later */
   position: absolute;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .object-cube {
-  bottom: 80px;
+  bottom: 0px;
   left: 20px;
-  width: 160px;
-  height: 140px;
-  /* placeholder outline */
-  border: 1px dashed rgba(255,255,255,0.08);
-  border-radius: 4px;
+  width:720px;
+  height: 480px;
+}
+
+.object-cube img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: slideInLeft 0.8s ease-out forwards;
 }
 
 .object-worm {
-  bottom: 40px;
-  left: 140px;
-  width: 320px;
-  height: 200px;
-  /* placeholder outline */
-  border: 1px dashed rgba(128,255,0,0.15);
-  border-radius: 4px;
+  bottom: 100px;
+  left: 540px;
+  top:300px;
+  width: 720px;
+  height: 720px;
+}
+
+.object-worm img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: slideInBottom 0.8s ease-out forwards;
 }
 
 /* ── Centre hero content ───────────────────────────────── */
@@ -262,8 +275,13 @@ ul {
   text-align: center;
   padding: 0 32px;
   z-index: 2;
-  border: #80FF00 1px solid;
-  /* margin-bottom: 40px; */
+  /* border: #80FF00 1px solid; */
+  margin-bottom: 300px;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .hero-greeting {
@@ -279,13 +297,15 @@ ul {
 .hero-name {
   font-family: 'crush mine', cursive;
   font-weight: 700;
-  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  /* font-size: clamp(3.2rem, 7vw, 6.5rem); */
+  font-size:150px;
   color: var(--white);
   line-height: 1;
   letter-spacing: -0.01em;
   margin-bottom: 20px;
   /* let it overflow naturally like in the design */
   white-space: nowrap;
+
 }
 
 .hero-titles {
@@ -326,6 +346,7 @@ ul {
 .hero-bio {
   font-family: var(delight), cursive;
   font-size: clamp(0.85rem, 1.1vw, 0.98rem);
+  /* font-size: 1em; */
   font-weight: 300;
   color: var(--grey-light);
   line-height: 1.5;
@@ -343,25 +364,22 @@ ul {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  overflow: visible;
+  /* overflow: hidden; */
+   /* left: 1300px; */
+  z-index: 3;
+  /* border: #0080ff 1px solid; */
+  height: 100%;
+  
 }
 
-/* placeholder block shown until character image is added */
-.hero-character::after {
-  content: 'Character image\Acoming soon';
-  white-space: pre;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 320px;
-  height: 420px;
-  border: 1px dashed rgba(255,255,255,0.08);
-  border-radius: 8px;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.18);
-  font-family: var(--font-body);
-  margin-bottom: 50px;
+.hero-character img {
+  width: 1080px;
+  height: 720px;
+  object-fit: cover;
+  /* border-radius: 8px; */
+  /* margin-bottom: 50px; */
+  animation: slideInRight 0.9s ease-out forwards;
+
 }
 
 /* ── Bottom accent bar ─────────────────────────────────── */
@@ -431,7 +449,11 @@ ul {
   }
 }
 
-/* ── Word stagger animation ───────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════
+   ANIMATIONS — Slide in effects with fade-in
+═══════════════════════════════════════════════════════════ */
+
+/* Word stagger animation */
 @keyframes slideInWord {
   from {
     opacity: 0;
@@ -455,3 +477,39 @@ ul {
 .hero-content .word:nth-child(2) { animation-delay: 0.1s; }
 .hero-content .word:nth-child(3) { animation-delay: 0.2s; }
 /* ... and so on for each word */
+
+/* Slide in from left + fade */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right + fade */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from bottom + fade */
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

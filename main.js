@@ -46,3 +46,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+
+/* ── Stagger animation for words on load ───────────────────── */
+const heroContent = document.querySelector('.hero-content');
+const words = heroContent.querySelectorAll('.word');
+
+words.forEach((word, index) => {
+  word.style.animationDelay = `${index * 0.08}s`;
+});

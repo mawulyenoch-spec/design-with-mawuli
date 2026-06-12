@@ -34,7 +34,16 @@
   src: url(./delight-vf.ttf);
   /* font-weight: normal; */
 }
-
+@font-face{
+  font-family: 'alliance no.1 light';
+  src: url(./fonts/Degarism\ Studio\ -\ Alliance\ No.1\ Light.otf);
+  /* font-weight: 300; */
+}
+@font-face{
+  font-family: 'alliance no.2 regular';
+  src: url(./fonts/Degarism\ Studio\ -\ Alliance\ No.2\ Light.otf);
+  /* font-weight: 400; */
+}
 
 
 /* ── Reset ─────────────────────────────────────────────── */
@@ -54,6 +63,7 @@ body {
   font-family: var(--font-body);
   min-height: 100vh;
   overflow-x: hidden;
+  
 }
 
 a {
@@ -80,7 +90,8 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 70px;
+  /* max-width: 1440px; */
 
   /* subtle dark glass */
   background: rgba(8, 8, 8, 0.85);
@@ -94,16 +105,22 @@ ul {
   align-items: center;
   gap: 10px;
   flex: 1;
+ 
 }
 
 .nav-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: var(--off-black);
-  border: 1.5px solid rgba(255,255,255,0.12);
+  /* border: 1.5px solid rgba(238, 8, 8, 0.89); */
   flex-shrink: 0;
+}
+.nav-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* placeholder ring shown until real image is added */
@@ -177,18 +194,18 @@ ul {
   border: 1.5px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  color: var(--white);
+  color: var(--black);
   letter-spacing: 0.03em;
-  background: transparent;
+  background: var(--white);
   cursor: pointer;
   transition:
     background-color 0.25s ease,
     border-color     0.25s ease,
     color            0.25s ease,
     font-weight      0.15s ease,
-    transform        0.2s ease;
+    transform        0.4s ease;
 }
 
 .btn-contact:hover {
@@ -203,84 +220,116 @@ ul {
 /* ═══════════════════════════════════════════════════════════
    HERO SECTION
 ═══════════════════════════════════════════════════════════ */
+.hero-container{
+  
+  /* max-width: 1440px; */
+  /* margin: 0 auto; */
+}
 .hero {
+  /* max-width:1440px;      */
+  margin: 0 auto;
   position: relative;
   min-height: 100vh;
   padding-top: var(--nav-height);
+  
+  /* display: grid; */
+  /* grid-template-columns: 220px 1fr 320px; */
+  /* grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: 1fr auto; */
 
-  display: grid;
-  grid-template-columns: 220px 1fr 320px;
-  grid-template-rows: 1fr auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-
+  justify-content: center;
   overflow: hidden;
+  /* border: yellow 1px solid ; */
+
 }
 
 /* ── Left objects column ───────────────────────────────── */
 .hero-objects {
-  grid-column: 1;
-  grid-row: 1;
   position: relative;
   height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 60px;
-  padding-left: 32px;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 100px; */
+  /* padding-bottom: 60px; */
+  /* padding-left: 32px; */
   /* border: #ff8800 1px solid; */
   z-index: 4;
+ 
+  bottom: 190px;
+   /* top:820px; */
+  
 }
 
 .object-cube,
 .object-worm {
   /* dimensions sized for the 3-D images that come later */
-  position: absolute;
-  overflow: hidden;
-  border-radius: 4px;
+  position: relative;
+  /* overflow: hidden; */
+  /* border-radius: 4px; */
 }
 
 .object-cube {
+ top: 160px;
   bottom: 0px;
-  left: 20px;
-  width:720px;
-  height: 480px;
+  left: 0px;
+  /* width: clamp(1080px, 20vw, 720px);
+  height: clamp(430px, 25vw, 480px); */
+  display: flex;
+  justify-content: start;
 }
 
 .object-cube img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 190%;
+  height: 120%;
+  object-fit: cover;
   animation: slideInLeft 0.8s ease-out forwards;
+  /* border: #00eeff 1px solid; */
 }
 
 .object-worm {
-  bottom: 100px;
-  left: 540px;
-  top:300px;
-  width: 720px;
-  height: 720px;
+  /* bottom: 100px; */
+  position: relative;
+  left: 200px;
+  top: 220px;
+  /* width: clamp(350px, 90vw, 1080px);
+  height: clamp(350px, 30vw, 720px); */
+  /* display: flex;
+  align-items: center;
+  justify-content: flex-end; */
 }
 
 .object-worm img {
-  width: 100%;
-  height: 100%;
+  width: 200%;
+  height: 120%;
   object-fit: contain;
   animation: slideInBottom 0.8s ease-out forwards;
+  /* border: #ff0062 1px solid; */
 }
 
 /* ── Centre hero content ───────────────────────────────── */
 .hero-content {
-  grid-column: 2;
-  grid-row: 1;
+  /* grid-column: 2;
+  grid-row: 1; */
   text-align: center;
   padding: 0 32px;
   z-index: 2;
   /* border: #80FF00 1px solid; */
-  margin-bottom: 300px;
-  /* width: 100%; */
-  display: flex;
+  margin-bottom: 30%;
+  width: 100%;
+  position: relative;
+  /* top: 100px; */
+  margin:0 auto;
+  top: 100px;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  /* justify-content: center;  */
+  /* background-color:blue; */
 
 }
 
@@ -292,13 +341,14 @@ ul {
   color: var(--white);
   letter-spacing: 0.01em;
   margin-bottom: 8px;
+
 }
 
 .hero-name {
   font-family: 'crush mine', cursive;
   font-weight: 700;
-  /* font-size: clamp(3.2rem, 7vw, 6.5rem); */
-  font-size:150px;
+  font-size: clamp(3.2rem, 7vw, 9rem);
+  /* font-size:120px; */
   color: var(--white);
   line-height: 1;
   letter-spacing: -0.01em;
@@ -321,7 +371,8 @@ ul {
 }
 .hero-titles .magician{
   color:#80FF00;
-  font-family: delight, cursive;
+  font-family:   font-family: 'alliance no.1 light';
+
   /* font-style:light; */
   font-weight: 300;
   font-size: 0.8em;
@@ -345,55 +396,149 @@ ul {
 
 .hero-bio {
   font-family: var(delight), cursive;
-  font-size: clamp(0.85rem, 1.1vw, 0.98rem);
-  /* font-size: 1em; */
+  /* font-size: clamp(0.85rem, 1.1vw, 0.98rem); */
+  font-size: 1.2em;
   font-weight: 300;
   color: var(--grey-light);
   line-height: 1.5;
-  max-width: 580px;
+  max-width: 700px;
+  
   margin: 0 auto;
   text-align: center;
 }
 
 /* ── Right character column ────────────────────────────── */
 .hero-character {
-  grid-column: 3;
-  grid-row: 1;
+ 
   position: relative;
   height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  /* overflow: hidden; */
-   /* left: 1300px; */
-  z-index: 3;
+  width: 100%;
+  overflow: hidden;
+  /* left: 1290px; */
+
+  /* z-index: 3; */
   /* border: #0080ff 1px solid; */
+
   height: 100%;
-  
+  display: flex;
+  justify-content: end;
+  /* bottom: 70px; */
+
 }
 
 .hero-character img {
-  width: 1080px;
-  height: 720px;
+  width: clamp(350px, 30vw, 1080px);
+  height: clamp(350px, 50vw, 720px);
   object-fit: cover;
-  /* border-radius: 8px; */
-  /* margin-bottom: 50px; */
   animation: slideInRight 0.9s ease-out forwards;
-
+  /* width: 100%;
+  height: 100%; */
 }
 
 /* ── Bottom accent bar ─────────────────────────────────── */
 .hero-bar {
-  grid-column: 1 / -1;
-  grid-row: 2;
+
   width: 100%;
-  height: 140px;
+  height: 60px;
   background-color: var(--accent);
   position: absolute;
   bottom: 0;
   left: 0;
+  /* border: #f50390 1px solid; */
+  margin-bottom: 190px;
+}
+.container-2{
+  /* max-width: 1440px; */
+  margin: 0 auto;
+
+}
+.mini-bio{
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background: blue ; */
+  /* border: 1px solid rgb(155, 6, 241); */
+  color: white;
+  font-size : 2em;
+  line-height: 0.7em;
+ bottom: 190px;
+position: relative;
+
+
 }
 
+.btn-about{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  font-family: inter;
+  font-weight: 400;
+  border: 1px solid rgb(247, 247, 247);
+  color: white;
+  background: black;
+  transition: 0.5s ease;
+}
+
+.btn-about:hover{
+  background: white;
+  color: black;
+  border: 1px solid rgb(247, 247, 247);
+  transform: scale(0.95);
+  transition: 0.6s ease;
+  font-weight: 600;
+}
+
+.mini-bio p{
+  font-family:Alliance No.1 Light, cursive;
+  font-weight:100;
+  font-style:light;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Desktop Laptop (1440px and above)
+═══════════════════════════════════════════════════════════ */
+/* @media (min-width: 1441px) {
+  .hero {
+    grid-template-columns: 300px 1fr 420px;
+    padding: var(--nav-height) 80px 80px;
+    gap: 60px;
+  }
+
+  .hero-objects {
+    padding-bottom: 100px;
+  }
+
+  .object-cube {
+    width: clamp(600px, 50vw, 1000px);
+    height: clamp(450px, 40vw, 700px);
+  }
+
+  .object-worm {
+    width: clamp(1000px, 55vw, 1300px);
+    height: clamp(900px, 50vw, 1100px);
+  }
+
+  .hero-character img {
+    width: clamp(500px, 60vw, 1400px);
+    height: clamp(450px, 55vw, 950px);
+  }
+
+  .hero-name {
+    font-size: clamp(7rem, 12vw, 11rem);
+  }
+
+  .hero-bar {
+    height: 120px;
+  }
+
+  .word {
+    animation-delay: var(--stagger-index);
+  }
+} */
 
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE — basic tablet / mobile adjustments

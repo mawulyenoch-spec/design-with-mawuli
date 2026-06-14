@@ -104,3 +104,25 @@ const track = document.getElementById('track');
   });
 
   window.addEventListener('resize', () => { buildDots(); goTo(current); });
+const wrap = document.getElementById('videoWrap');
+
+    // keyboard accessibility – Enter / Space triggers play
+    wrap.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        wrap.click();
+      }
+    });
+
+    wrap.addEventListener('click', function(e) {
+      // ignore clicks on the corner button
+      if (e.target.closest('.mw-corner-btn')) return;
+      // TODO: swap in your video URL here
+      console.log('Play video');
+    });
+
+    document.querySelector('.mw-corner-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      // TODO: open fullscreen / modal
+      console.log('Open fullscreen');
+    });

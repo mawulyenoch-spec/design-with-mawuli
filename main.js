@@ -54,3 +54,53 @@ const words = heroContent.querySelectorAll('.word');
 words.forEach((word, index) => {
   word.style.animationDelay = `${index * 0.08}s`;
 });
+const track = document.getElementById('track');
+  const dotsEl = document.getElementById('dots');
+  const cards = Array.from(track.querySelectorAll('.card'));
+  let current = 0;
+
+  function getVisible() {
+    const w = track.parentElement.offsetWidth;
+    if (w <= 440) return 1;
+    if (w <= 700) return 1.2;
+    return 3;
+  }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    const vis = Math.round(getVisible());
+    const total = Math.max(1, cards.length - vis + 1);
+    for (let i = 0; i < total; i++) {
+      const b = document.createElement('button');
+      b.className = 'dot' + (i === current ? ' active' : '');
+      b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      b.setAttribute('role', 'tab');
+      b.onclick = () => goTo(i);
+      dotsEl.appendChild(b);
+    }
+  }
+
+  function goTo(idx) {
+    const vis = Math.round(getVisible());
+    const max = Math.max(0, cards.length - vis);
+    current = Math.max(0, Math.min(idx, max));
+    const gap = 16;
+    const cardW = track.parentElement.offsetWidth;
+    const singleW = (cardW - gap * (Math.round(getVisible()) - 1)) / Math.round(getVisible());
+    track.style.transform = `translateX(-${current * (singleW + gap)}px)`;
+    document.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  buildDots();
+  goTo(0);
+
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? goTo(current + 1) : goTo(current - 1); }
+  });
+
+  window.addEventListener('resize', () => { buildDots(); goTo(current); });

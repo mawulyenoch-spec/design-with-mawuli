@@ -126,3 +126,29 @@ const wrap = document.getElementById('videoWrap');
       // TODO: open fullscreen / modal
       console.log('Open fullscreen');
     });
+  (function () {
+      // IntersectionObserver — triggers bottom-to-top reveal on scroll
+      const cards = document.querySelectorAll(".logo-section .cardL");
+
+      if (!cards.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              // Once revealed, stop watching (one-shot animation)
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,          // viewport
+          rootMargin: '0px 0px -60px 0px', // trigger slightly before fully in view
+          threshold: 0.12,     // 12 % of the card must be visible
+        }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+    })();
+    

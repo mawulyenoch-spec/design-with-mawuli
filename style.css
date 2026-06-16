@@ -887,57 +887,509 @@ margin: 0 auto;
     .mw-video-wrap:hover .mw-corner-btn svg {
       stroke: #1c1c1a;
     }
+    
+    .container5{
+   background: #EEEEF0;
+    position: relative;
+   bottom: 190px;
+    }
+.section5{
+  /* border: grey 2px solid  ; */
+  /* max-width: 1440px; */
+  /* margin: 0 auto; */
+}
+ 
+    /* ── Section wrapper ── */
+    .logo-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
 
-    /* ─── Responsive ─────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .subject {
-        padding: 48px 40px 64px;
-      }
-      .mw-top {
-        gap: 36px;
+    }
+
+    /* ── Header copy ── */
+    .logo-section__header {
+      margin-bottom: 40px;
+    }
+
+    .logo-section__title {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 800;
+      color: #111;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      font-family: "inter"san serif;
+    }
+
+    .logo-section__subtitle {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #4caf50;
+      font-weight: 500;
+      font-family: Alliance No.2 cursive;
+    }
+
+    /* ── Card grid ── */
+    .logo-section__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+      align-items: start;
+    }
+
+    /* Card 1 spans two rows */
+    .cardL--tall {
+      grid-row: span 2;
+    }
+
+    /* ── Shared card base ── */
+.cardL {
+      border-radius: 20px;
+      overflow: hidden;
+
+      /* scroll-reveal initial state */
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .cardL.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered delays for the 5 cards */
+    .cardL:nth-child(1) { transition-delay: 0.05s; }
+    .cardL:nth-child(2) { transition-delay: 0.15s; }
+    .cardL:nth-child(3) { transition-delay: 0.25s; }
+    .cardL:nth-child(4) { transition-delay: 0.35s; }
+    .cardL:nth-child(5) { transition-delay: 0.45s; }
+
+    /* ── Card 1: Logo showcase (dark bottom) ── */
+    .cardL--logo {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cardL--logo .cardL__visual {
+      background: #f5f0e8;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px 20px;
+      min-height: 320px;
+    }
+
+    .cardL--logo .cardL__visual img {
+      width: 100%;
+      max-width: 220px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 24px rgba(0,0,0,0.18));
+    }
+
+    .cardL--logo .cardL__body {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 22px 24px 26px;
+    }
+
+    .cardL--logo .cardL__label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .cardL--logo .cardL__body p {
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: #ccc;
+    }
+
+    /* ── Card 2: 3-D icon (dark full bleed) ── */
+    .cardL--icon {
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+    }
+
+    .cardL--icon img {
+      width: 55%;
+      max-width: 200px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 20px rgba(255,255,255,0.1));
+    }
+
+    /* 3-D icon placeholder (triangle wireframe) */
+    .icon-triangle {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-triangle svg {
+      width: 120px;
+      height: 120px;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.3));
+    }
+
+    /* ── Card 3: Stat pill ── */
+    .cardL--stat {
+      background: #e8e8e8;
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 200px;
+    }
+
+    .cardL--stat .stat__number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #111;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .cardL--stat .stat__body {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .cardL--stat .stat__body strong {
+      font-weight: 700;
+    }
+
+    /* ── Card 4: Light logo (Agenly) ── */
+    .cardL--light-logo {
+      background: #e8e8e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      padding: 28px;
+    }
+
+    .cardL--light-logo .agenly-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cardL--light-logo .agenly-logo .logo-mark {
+      width: 36px;
+      height: 36px;
+      position: relative;
+    }
+
+    .cardL--light-logo .agenly-logo .logo-mark svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .cardL--light-logo .agenly-logo .logo-text {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: -0.03em;
+    }
+
+    /* ── Card 5: Hair photo (Klassique Tresses) ── */
+    .cardL--photo {
+      background: #111;
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+    }
+
+    .cardL--photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+
+    .cardL--photo .photo-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 30%, transparent 70%);
+    }
+
+    /* Klassique Tresses watermark content */
+    .klassique-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .klassique-brand .kt-icon svg {
+      width: 40px;
+      height: 40px;
+      opacity: 0.9;
+    }
+
+    .klassique-brand .kt-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .klassique-brand .kt-tag {
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+
+    /* Dark hair bg fallback */
+    .hair-bg {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 40%, #111 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hair-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 3px,
+        rgba(255,255,255,0.03) 3px,
+        rgba(255,255,255,0.03) 6px
+      );
+    }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .cardL {
+        opacity: 1;
+        transform: none;
+        transition: none;
       }
     }
 
-    @media (max-width: 700px) {
-      .subject {
-        padding: 36px 24px 56px;
+    /* ══════════════════════════════════════
+       RESPONSIVE BREAKPOINTS
+       1) max-width: 1024px  (large tablet / small laptop)
+       2) max-width: 768px   (tablet portrait)
+       3) max-width: 480px   (mobile)
+    ══════════════════════════════════════ */
+
+    /* ── 1024px: large tablet / small laptop ── */
+    @media (max-width: 1024px) {
+      .logo-section {
+        max-width: 960px;
+        padding: 56px 28px 72px;
       }
-      .mw-top {
-        grid-template-columns: 1fr;
-        gap: 20px;
+
+      .logo-section__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
       }
-      .mw-desc-col {
-        padding-top: 0;
+
+      .cardL--tall {
+        grid-row: span 2;
       }
-      .mw-play {
-        width: 64px;
-        height: 64px;
+
+      .cardL--logo .cardL__visual {
+        min-height: 290px;
+        padding: 28px 20px 18px;
       }
-      .mw-play svg {
-        width: 22px;
-        height: 22px;
-        margin-left: 4px;
+
+      .cardL--icon {
+        min-height: 260px;
+      }
+
+      .cardL--light-logo .agenly-logo .logo-text {
+        font-size: 1.65rem;
+      }
+
+      .cardL--stat {
+        min-height: 185px;
+        padding: 24px 22px;
+      }
+
+      .cardL--stat .stat__number {
+        font-size: 2.1rem;
+      }
+
+      .cardL--photo {
+        min-height: 200px;
       }
     }
 
+    /* ── 768px: tablet portrait ── */
+    @media (max-width: 768px) {
+      .logo-section {
+        padding: 48px 20px 64px;
+      }
+
+      .logo-section__grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 12px;
+      }
+
+      /* tall card full-width row on tablet */
+      .cardL--tall {
+        grid-row: span 1;
+        grid-column: span 2;
+      }
+
+      /* logo card goes side-by-side (visual | text) */
+      .cardL--logo {
+        flex-direction: row;
+        align-items: stretch;
+      }
+
+      .cardL--logo .cardL__visual {
+        min-height: 220px;
+        flex: 1;
+        padding: 24px 18px;
+      }
+
+      .cardL--logo .cardL__body {
+        flex: 1;
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .cardL--icon {
+        min-height: 220px;
+      }
+
+      .cardL--light-logo {
+        min-height: 160px;
+        padding: 20px;
+      }
+
+      .cardL--light-logo .agenly-logo .logo-text {
+        font-size: 1.5rem;
+      }
+
+      .cardL--stat {
+        min-height: 160px;
+        padding: 20px 18px;
+      }
+
+      .cardL--stat .stat__number {
+        font-size: 1.9rem;
+        margin-bottom: 10px;
+      }
+
+      .cardL--photo {
+        min-height: 190px;
+      }
+    }
+
+    /* ── 480px: mobile ── */
     @media (max-width: 480px) {
-      .subject {
-        padding: 28px 16px 48px;
+      .logo-section {
+        padding: 36px 14px 56px;
       }
-      .mw-headline {
-        font-size: 28px;
+
+      .logo-section__title {
+        font-size: 1.75rem;
+        letter-spacing: -0.01em;
       }
-      .mw-play {
-        width: 54px;
-        height: 54px;
+
+      .logo-section__subtitle {
+        font-size: 0.8rem;
       }
-      .mw-play svg {
-        width: 18px;
-        height: 18px;
+
+      .logo-section__grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
       }
-      .mw-corner-btn {
-        width: 38px;
-        height: 38px;
+
+      /* reset all spanning — single column */
+      .cardL--tall {
+        grid-row: span 1;
+        grid-column: span 1;
+      }
+
+      /* logo card stacks back to column on mobile */
+      .cardL--logo {
+        flex-direction: column;
+      }
+
+      .cardL--logo .cardL__visual {
+        min-height: 200px;
+        padding: 24px 18px 16px;
+      }
+
+      .cardL--logo .cardL__body {
+        padding: 18px 20px 22px;
+      }
+
+      .cardL--icon {
+        min-height: 180px;
+      }
+
+      .icon-triangle svg {
+        width: 90px;
+        height: 90px;
+      }
+
+      .cardL--light-logo {
+        min-height: 140px;
+        padding: 18px;
+      }
+
+      .cardL--light-logo .agenly-logo .logo-text {
+        font-size: 1.4rem;
+      }
+
+      .cardL--light-logo .agenly-logo .logo-mark svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .cardL--stat {
+        min-height: 150px;
+        padding: 20px 18px;
+      }
+
+      .cardL--stat .stat__number {
+        font-size: 1.8rem;
+      }
+
+      .cardL--stat .stat__body {
+        font-size: 0.78rem;
+      }
+
+      .cardL--photo {
+        min-height: 180px;
+      }
+
+      .klassique-brand .kt-name {
+        font-size: 0.85rem;
+        letter-spacing: 0.2em;
       }
     }
 
@@ -988,10 +1440,8 @@ margin: 0 auto;
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE — basic tablet / mobile adjustments
 ═══════════════════════════════════════════════════════════ */
+ /* ─── Responsive ─────────────────────────────────────── */
  
-
-
-
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
@@ -1012,13 +1462,22 @@ margin: 0 auto;
   .hero-name {
     white-space: normal;
   }
+
+   .subject {
+        padding: 48px 40px 64px;
+      }
+      .mw-top {
+        gap: 36px;
+      }
 }
+
+
+/* <Tablet screens > */
 
 @media (max-width: 768px) {
   .navbar {
     padding: 0 20px;
   }
-  
   
   .nav-links {
     gap: 28px;
@@ -1028,6 +1487,27 @@ margin: 0 auto;
     font-size: clamp(2.6rem, 10vw, 4rem);
   }
   .card { flex: 0 0 calc(80% - 8px); }
+
+  .subject {
+        padding: 36px 24px 56px;
+      }
+      .mw-top {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .mw-desc-col {
+        padding-top: 0;
+      }
+      .mw-play {
+        width: 64px;
+        height: 64px;
+      }
+      .mw-play svg {
+        width: 22px;
+        height: 22px;
+        margin-left: 4px;
+      }
+
 }
 
 @media (max-width: 480px) {
@@ -1044,8 +1524,26 @@ margin: 0 auto;
     padding: 7px 16px;
   }
    .card { flex: 0 0 calc(90% - 8px); }
-}
 
+   .subject {
+        padding: 28px 16px 48px;
+      }
+      .mw-headline {
+        font-size: 28px;
+      }
+      .mw-play {
+        width: 54px;
+        height: 54px;
+      }
+      .mw-play svg {
+        width: 18px;
+        height: 18px;
+      }
+      .mw-corner-btn {
+        width: 38px;
+        height: 38px;
+      }
+    }
 /* ═══════════════════════════════════════════════════════════
    ANIMATIONS — Slide in effects with fade-in
 ═══════════════════════════════════════════════════════════ */

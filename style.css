@@ -895,15 +895,17 @@ margin: 0 auto;
     }
 .section5{
   /* border: grey 2px solid  ; */
-  /* max-width: 1440px; */
-  /* margin: 0 auto; */
+  /* max-width: 1440px;
+  margin: 0 auto; */
 }
  
     /* ── Section wrapper ── */
     .logo-section {
+      /* border: #4caf50 2px solid; */
       max-width: 1440px;
       margin: 0 auto;
-      padding: 64px 24px 80px;
+      padding: 60px;
+      /* padding: 64px 24px 80px; */
 
     }
 
@@ -936,15 +938,21 @@ margin: 0 auto;
       grid-template-rows: auto auto;
       gap: 16px;
       align-items: start;
+      /* border: #1e2b18 3px solid; */
+    }
+  
+ .cardL:nth-of-type(5){
+      grid-row: 2 /1 ;
     }
 
     /* Card 1 spans two rows */
     .cardL--tall {
       grid-row: span 2;
+      
     }
 
     /* ── Shared card base ── */
-.cardL {
+ .cardL {
       border-radius: 20px;
       overflow: hidden;
 
@@ -968,13 +976,18 @@ margin: 0 auto;
 
     /* ── Card 1: Logo showcase (dark bottom) ── */
     .cardL--logo {
-      background: #fff;
+      /* background: #fff; */
+      background: #1a1a1a;
+
       display: flex;
       flex-direction: column;
+      /* border: blue 1px solid ; */
+      padding: 15px;
     }
 
     .cardL--logo .cardL__visual {
-      background: #f5f0e8;
+      background: #F3EBE5;
+      border-radius: 25px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -982,19 +995,24 @@ margin: 0 auto;
       justify-content: center;
       padding: 32px 24px 20px;
       min-height: 320px;
+      overflow: hidden;
     }
-
+    
     .cardL--logo .cardL__visual img {
-      width: 100%;
-      max-width: 220px;
+      width: 120%;
+      height: 100%;
+      /* max-width: 400px; */
       object-fit: contain;
-      filter: drop-shadow(0 6px 24px rgba(0,0,0,0.18));
+      /* filter: drop-shadow(0 6px 24px rgba(0,0,0,0.18)); */
     }
 
     .cardL--logo .cardL__body {
       background: #1a1a1a;
       color: #fff;
       padding: 22px 24px 26px;
+      font-family: "inter" sans-serif;
+      /* font-weight: 400; */
+      /* border: #4caf50 1px solid ; */
     }
 
     .cardL--logo .cardL__label {
@@ -1008,6 +1026,7 @@ margin: 0 auto;
       font-size: 0.82rem;
       line-height: 1.55;
       color: #ccc;
+      
     }
 
     /* ── Card 2: 3-D icon (dark full bleed) ── */
@@ -1016,35 +1035,30 @@ margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 280px;
+      /* min-height: 325px; */
     }
 
     .cardL--icon img {
-      width: 55%;
-      max-width: 200px;
+      width: 480%;
+      /* max-width: 200px; */
       object-fit: contain;
-      filter: drop-shadow(0 4px 20px rgba(255,255,255,0.1));
+      
     }
 
     /* 3-D icon placeholder (triangle wireframe) */
     .icon-triangle {
       width: 120px;
-      height: 120px;
+      /* height: 120px; */
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .icon-triangle svg {
-      width: 120px;
-      height: 120px;
-      filter: drop-shadow(0 0 12px rgba(255,255,255,0.3));
-    }
 
     /* ── Card 3: Stat pill ── */
     .cardL--stat {
-      background: #e8e8e8;
+      background: #dbdbdb;
       padding: 28px 26px;
       display: flex;
       flex-direction: column;
@@ -1054,134 +1068,86 @@ margin: 0 auto;
 
     .cardL--stat .stat__number {
       font-size: 2.4rem;
-      font-weight: 800;
+      font-weight: 900;
+      font-family: "inter" sans-serif;
       color: #111;
       line-height: 1;
       margin-bottom: 12px;
+      
     }
 
     .cardL--stat .stat__body {
       font-size: 0.82rem;
       line-height: 1.6;
       color: #333;
+      font-family: "inter" sans-serif;
+      font-weight: 400;
     }
 
     .cardL--stat .stat__body strong {
-      font-weight: 700;
+      font-weight: 800;
     }
 
     /* ── Card 4: Light logo (Agenly) ── */
     .cardL--light-logo {
-      background: #e8e8e8;
+      background: #e6e5e5;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 180px;
       padding: 28px;
+       overflow: hidden;
+       min-height: 200px;
     }
 
     .cardL--light-logo .agenly-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      /* gap: 12px; */
+      width: 100%;
+      height: 100px;
+      /* border: #4caf50 1px solid ; */
     }
 
-    .cardL--light-logo .agenly-logo .logo-mark {
-      width: 36px;
-      height: 36px;
-      position: relative;
-    }
 
-    .cardL--light-logo .agenly-logo .logo-mark svg {
-      width: 36px;
-      height: 36px;
-    }
-
-    .cardL--light-logo .agenly-logo .logo-text {
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: #111;
-      letter-spacing: -0.03em;
-    }
-
+   .agenly-logo img{
+    width: 150%;
+    /* height: 100px; */
+    object-fit: contain;
+    /* border: #abbe05 1px solid ; */
+   }
+  
     /* ── Card 5: Hair photo (Klassique Tresses) ── */
     .cardL--photo {
       background: #111;
       position: relative;
-      min-height: 220px;
+      /* min-height: 220px; */
       overflow: hidden;
+      /* border: #f70303 2px solid; */
     }
+    
 
-    .cardL--photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-    }
-
-    .cardL--photo .photo-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(0,0,0,0.5) 30%, transparent 70%);
-    }
-
-    /* Klassique Tresses watermark content */
-    .klassique-brand {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .klassique-brand .kt-icon svg {
-      width: 40px;
-      height: 40px;
-      opacity: 0.9;
-    }
-
-    .klassique-brand .kt-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      color: #fff;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .klassique-brand .kt-tag {
-      font-size: 0.6rem;
-      color: rgba(255,255,255,0.7);
-      letter-spacing: 0.1em;
-      text-align: center;
-    }
-
-    /* Dark hair bg fallback */
+  /* Dark hair bg fallback */
     .hair-bg {
       width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 40%, #111 100%);
+      height: 320px;
       position: relative;
-      overflow: hidden;
+      /* border: #6c0bda 1px solid ; */
+      display: flex;
+       justify-content: center;
+      align-items: center;
     }
 
-    .hair-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 3px,
-        rgba(255,255,255,0.03) 3px,
-        rgba(255,255,255,0.03) 6px
-      );
+    .hair-bg img {
+      width: 100%;
+      /* height: 100%; */
+      object-fit: cover;
+      /* border: #57c412 1px solid; */
+
     }
 
+  
     /* ── Reduced motion ── */
     @media (prefers-reduced-motion: reduce) {
       .cardL {

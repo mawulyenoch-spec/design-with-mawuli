@@ -151,4 +151,51 @@ const wrap = document.getElementById('videoWrap');
 
       cards.forEach((card) => observer.observe(card));
     })();
-    
+
+    /* ── Home pictures: 3D perspective hover effect ───────────── */
+// const hoverCards = document.querySelectorAll('.hover-3d');
+
+// hoverCards.forEach((el) => {
+//   el.addEventListener('mousemove', (e) => {
+//     const rect = el.getBoundingClientRect();
+//     const x = (e.clientX - rect.left) / rect.width  - 0.5;
+//     const y = (e.clientY - rect.top)  / rect.height - 0.5;
+//     const tiltX = -(y * 20).toFixed(1);
+//     const tiltY =  (x * 20).toFixed(1);
+//     el.style.transform =
+//       `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.07)`;
+//   });
+
+//   el.addEventListener('mouseleave', () => {
+//     el.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+//   });
+// });
+
+(function () {
+  const lines = document.querySelectorAll(".reveal-line");
+
+  if (!lines.length) return;
+
+  // stagger: each line waits a bit longer than the one before it
+  lines.forEach((line, index) => {
+    line.style.transitionDelay = `${index * 0.15}s`;
+  });
+
+  const lineObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          lineObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: '0px 0px -60px 0px',
+      threshold: 0.12,
+    }
+  );
+
+  lines.forEach((line) => lineObserver.observe(line));
+})();

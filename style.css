@@ -44,7 +44,10 @@
   src: url(./fonts/Degarism\ Studio\ -\ Alliance\ No.2\ Light.otf);
   /* font-weight: 400; */
 }
-
+@font-face {
+  font-family: 'Gotham-bold';
+  src: url(./fonts/GOTHAM-BOLD.TTF);
+}
 
 /* ── Reset ─────────────────────────────────────────────── */
 *, *::before, *::after {
@@ -502,8 +505,9 @@ margin-bottom: 20px;
 }
 
 .mini-bio p{
-  font-family:Alliance No.1 Light, cursive;
-  font-weight:100;
+  /* font-family:Alliance No.1 Light, cursive; */
+  font-family: gotham;
+  font-weight:300;
   font-style:light;
 }
 /* .reveal-lines{
@@ -1384,8 +1388,296 @@ margin: 0 auto;
       }
     }
 
+    .section6{
+    /* background: #8aff00; */
+    position: relative;
+    /* border: #4facfe 2px solid ; */
+    bottom: 241px;
+    }
+    .testimonials-section{
+      /* border: #f00000 2px solid ; */
+       /* max-width: 1440px; */
+       background: #8aff00;
+       /* padding: 50px; */
+       /* min-height: 500px; */
+    }
+
+.testimonials-heading {
+  font-family:  sans-serif;
+  text-align: center;
+  font-size: 100px;
+  color: #aaa;
+  padding: 2rem ;
+  background: #EEEEF0;
+}
+
+.testimonials-panel {
+  /* border: blue 2px solid; */
+  width: 100%;
+  /* height:450px ; */
+  max-width: 1440px;
+   margin: 0 auto;
+  /* background: #e9c008; */
+  /* padding: 3rem 2.5rem 4rem; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* gap: 2rem; */
+  /* align-items: start; */
+display: flex;
+padding: 20px;
+align-items: center;
+gap: 10px;
+justify-content:space-evenly;
+}
+
+.testimonials-quote-block {
+  position: relative;
+  padding: 1rem;
+ /* border: #000000 2px solid ; */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+ height: 300px;
+}
+
+.testimonials-quote-block p{
+font-family: gotham;
+font-weight: 600;
+padding: 10px;
+font-size: 40px;
+
+}
+
+.quote-mark {
+  font-size:100px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  
+}
+.quote-mark--start{
+  font-family: "gotham-bold";
+  color: #000000;
+  align-self: flex-start;
+   
+}
+.quote-mark--end {
+  text-align: right;
+  color: #000000;
+font-family: "gotham-bold";
+align-self: flex-end;
+}
+
+.testimonials-quote-text {
+  font-size: 50px;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  line-height: 1.3;
+  color: #000000;
+}
+
+.testimonial-card {
+  background: #000000;
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  /* height: 400px; */
+}
+
+.testimonial-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4facfe, #c850c0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.testimonial-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.testimonial-text-col {
+  flex: 1;
+  text-align: center;
+}
+
+.testimonial-name {
+  font-size: 19px;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.testimonial-review {
+  font-size: 13.5px;
+  color: #ccc;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.carousel-arrow {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .testimonials-panel {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-quote-block {
+    padding-top: 1.5rem;
+  }
+  .testimonials-heading{
+    font-size: 80px;
+    
+  }
+}
+
+@media (max-width: 1024px) {
+  .testimonials-panel {
+    padding: 4rem 3rem 5rem;
+  }
+  .quote-mark{
+    font-size: 70px;
+   
+  }
+  .testimonials-quote-block p{
+    font-size: 30px;
+  }
+}
+.container7{
+  /* margin: 0 auto; */
+}
+.section7{
+  position: relative;
+  /* background-color: rgb(247, 244, 244); */
+  /* border: #e3f307 2px solid ; */
+ bottom: 241px;
+   /* display: flex; */
+  /* height: 700px; */
+}
+.character2{
+/* width: 100%; */
+/* background: rgb(199, 156, 228); */
+  align-self: flex-end;
+}
 
 
+.pitch-in{
+  /* max-width: 1440px; */
+  /* margin: 0 auto; */
+  /* border: blue 2px solid; */
+  position: relative;
+ display: flex;
+/* align-items: center; */
+/* justify-content: center;  */
+background-color: rgb(247, 244, 244);
+color: #000000;
+font-size: 9em;
+gap: 50px;
+height: 500px;
+width: 100%;
+font-family: "inter",sans-serif;
+font-weight: 600;
+}
+
+.pitch-text{
+  position: relative;
+  display: flex;
+  /* flex: 1; */
+  border: salmon 2px solid;
+align-self: center;
+justify-self: center;
+width: 100%;
+}
+
+
+
+.pitch-text p :hover {
+color: linear-gradient(90deg, #4facfe, #c850c0);
+/* color: #4caf50; */
+transition: 0.4s ease;
+}
+.section7 img{
+  position: relative;
+  right: 21px;
+  width: 700px;
+  /* border: #4facfe 2px solid ; */
+  height: 750px;
+ object-fit: contain;
+ align-self: flex-end;
+
+}
+.circle-arrow-btn {
+  position: relative;
+  top: 80px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #111;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.circle-arrow-btn:hover {
+  background: #80FF00;
+  color: #020202;
+}
+
+.circle-arrow-btn:active {
+  transform: scale(0.95);
+}
+
+/* .mw-corner-btn1 {
+      position: relative;
+      top: 70px;
+      left: 50px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.88);
+      border: orangered 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.25s ease;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    } */
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE — Desktop Laptop (1440px and above)
 ═══════════════════════════════════════════════════════════ */

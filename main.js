@@ -171,6 +171,9 @@ const wrap = document.getElementById('videoWrap');
 //   });
 // });
 
+
+// reveal animation for all text
+
 (function () {
   const lines = document.querySelectorAll(".reveal-line");
 
@@ -198,4 +201,33 @@ const wrap = document.getElementById('videoWrap');
   );
 
   lines.forEach((line) => lineObserver.observe(line));
+})();
+
+// section6
+
+(function () {
+  const testimonials = [
+    { initial: "B", name: "Brian Hardy", review: "Communication was a massive strong point. He explained his creative process clearly and made me feel so comfortable along the way." },
+    { initial: "S", name: "Sarah Lewis", review: "Delivered exactly what we needed, ahead of schedule." },
+    { initial: "M", name: "Marcus Chen", review: "Working together felt effortless from start to finish." }
+  ];
+  let current = 0;
+
+  const avatarEl = document.getElementById('testimonial-avatar');
+  const nameEl = document.getElementById('testimonial-name');
+  const reviewEl = document.getElementById('testimonial-review');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  if (!nameEl) return;
+
+  function show(index) {
+    current = (index + testimonials.length) % testimonials.length;
+    avatarEl.textContent = testimonials[current].initial;
+    nameEl.textContent = testimonials[current].name;
+    reviewEl.textContent = testimonials[current].review;
+  }
+
+  prevBtn.addEventListener('click', () => show(current - 1));
+  nextBtn.addEventListener('click', () => show(current + 1));
 })();

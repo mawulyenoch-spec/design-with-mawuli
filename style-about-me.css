@@ -1,0 +1,1029 @@
+
+/* <style for the about me page> */
+
+:root {
+  --black:        #080808;
+  --off-black:    #111111;
+  --accent:       #80FF00;
+  --white:        #FFFFFF;
+  --grey:         #9A9A9A;
+  --grey-light:   #CCCCCC;
+
+  /* Typography */
+  --font-display: 'Caveat', cursive;           /* big name */
+  --font-serif:   'Cormorant Garamond', serif; /* "Hi, I am" */
+  --font-body:    'DM Sans', sans-serif;       /* everything else */
+
+  /* Spacing */
+  --nav-height:   72px;
+}
+@font-face {
+  font-family: 'Gohdtail';
+  src: url(./Gohdtail-BF6a06cc712da48.ttf);
+}
+@font-face {
+  font-family: 'koulen-khmer';
+  src: url(./fonts/koulen-khmer-400-normal.ttf);
+}
+@font-face {
+  font-family: 'crush mine';
+  src: url(./Crush\ Mine.otf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'delight';
+  src: url(./delight-vf.ttf);
+  /* font-weight: normal; */
+}
+@font-face{
+  font-family: 'alliance no.1 light';
+  src: url(./fonts/Degarism\ Studio\ -\ Alliance\ No.1\ Light.otf);
+  /* font-weight: 300; */
+}
+@font-face{
+  font-family: 'alliance no.2 regular';
+  src: url(./fonts/Degarism\ Studio\ -\ Alliance\ No.2\ Light.otf);
+  /* font-weight: 400; */
+}
+@font-face {
+  font-family: 'Gotham-bold';
+  src: url(./fonts/GOTHAM-BOLD.TTF);
+}
+@font-face {
+  font-family: 'Gotham-book';
+  src: url(./fonts/Gotham-Book.otf);
+}
+@font-face {
+  font-family: 'Gotham-light';
+  src: url(./fonts/Gotham-Light.otf);
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #e7e7e5;
+  color: var(--black);
+  font-family: var(--font-body);
+  /* font-family: 'Helvetica Neue', Arial, sans-serif; */
+ /* -webkit-font-smoothing: antialiased; */
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: var(--nav-height);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+  
+  .hero,
+  .name-section,
+  .footer  {
+    max-width: 1440px;
+    margin: 0 auto;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+  }
+/* <burger menu> */
+
+/* <burger menu> */
+
+.burger-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: #08080800;
+  /* background: var(--accent); */
+  cursor: pointer;
+  flex-shrink: 0;
+  z-index: 200;
+  position: relative;
+}
+
+.burger-icon {
+  position: relative;
+  width: 20px;
+  height: 14px;
+  display: block;
+}
+
+.burger-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--black);
+  border-radius: 2px;
+}
+
+.burger-line:nth-child(1) { top: 0; }
+.burger-line:nth-child(2) { top: 12px; }
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: var(--off-black);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  overflow-y: auto;
+  overflow-x: hidden;
+ 
+}
+
+.mobile-menu-inner {
+  padding: calc(var(--nav-height) + 40px) 24px 40px;
+  max-width: 600px;
+}
+
+.mobile-menu-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--grey);
+  margin-bottom: 18px;
+}
+
+.mobile-menu-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 24px;
+}
+
+.mobile-menu-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-links li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.mobile-link {
+  display: inline-block;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  padding: 14px 0;
+  text-decoration: none;
+}
+
+.mobile-link-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #80FF00;
+  flex-shrink: 0;
+}
+
+body.menu-open { overflow: hidden; }
+
+/* <burger menu> */
+ 
+  
+/* <burger menu> */
+
+/* ═══════════════════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════════════════ */
+.navbar {
+  /* border: #06B9C6 2px solid; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px;
+  background: #e7e7e5;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.5s ease,
+    backdrop-filter 0.5s ease;
+}
+
+.navbar.scrolled {
+  background:#e7e7e5;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* ── Logo / Name ───────────────────────────────────────── */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+ 
+}
+
+.nav-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  background: var(--off-black);
+  /* border: 1.5px solid rgba(238, 8, 8, 0.89); */
+  flex-shrink: 0;
+}
+.nav-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* placeholder ring shown until real image is added */
+.avatar-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); */
+}
+
+.nav-name {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--black);
+  letter-spacing: 0.02em;
+}
+
+/* ── Centre Links ──────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  flex: 2;
+  justify-content: center;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--black);
+  letter-spacing: 0.03em;
+  position: relative;
+  transition: font-weight 0.15s ease, color 0.15s ease;
+  /* Reserve space so bold doesn't shift layout */
+  display: inline-block;
+}
+
+/* Invisible bold ghost keeps width stable on hover */
+.nav-link::before {
+  content: attr(data-text);
+  display: block;
+  font-weight: 700;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.nav-link:hover {
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* active link — always bold */
+.nav-link.active {
+  font-weight: 700;
+  
+}
+
+/* ── CTA Button ─────────────────────────────────────────── */
+.nav-cta {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-contact {
+  display: inline-block;
+  padding: 8px 22px;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #e7e7e5 ;
+  letter-spacing: 0.03em;
+  background: var(--black);
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color     0.25s ease,
+    color            0.25s ease,
+    font-weight      0.15s ease,
+    transform        0.4s ease;
+}
+
+.btn-contact:hover {
+  background-color: var(--black);
+  border-color: var(--black);
+  color: #80FF00;
+  font-weight: 700;
+  transform: scale(1.06);
+}
+
+/* ===================== HERO ===================== */
+
+  .hero {
+    /* padding: calc(var(--nav-height) + 40px) 60px 0; */
+    padding: 30px 60px;
+     /* border: blue 2px solid; */
+    
+  }
+
+  .hero h1 {
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    max-width: 700px;
+  }
+
+  .thats-me-row {
+    /* border: rgb(255, 0, 179) 2px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 24px;
+    position: relative;
+  }
+
+   /* connector line: pill -> down into photo, desktop only */
+.thats-me-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.connector {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 450px;
+  height: 50px;
+  border-top: 1.5px solid rgba(0, 0, 0, 0.55);
+  border-right: 1.5px solid rgba(0, 0, 0, 0.55);
+  border-top-right-radius: 14px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+  
+  .thats-me-pill {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    background-color: #7dee0c;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+ 
+  .hero-media {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    align-items: flex-start;
+  }
+
+  .notes-card {
+    background: var(--black);
+    color: #fff;
+    flex: 1;
+    aspect-ratio: 16 / 9.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    line-height: 2em;
+   width: 100%;
+   border: #6fdc1a 2px solid ;
+   padding: 50px;
+   text-align: center;
+  }
+
+  .notes-card span {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fff;
+    opacity: 0.85;
+  }
+
+  .portrait {
+    width: 280px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #cfd6d2;
+     border-radius: 10px;
+  }
+
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 280 / 410;
+  }
+
+  /* ===================== NAME BLOCK ===================== */
+
+  .name-section {
+    padding: 100px 60px 0;
+    /* border: red 2px solid; */
+  }
+.name-services{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: #ff9900 2px solid; */
+  /* margin-top: 20px; */
+}
+  .name-block {
+    font-weight: 400;
+     font-family: 'koulen-khmer', cursive;
+    /* font-family: 'Arial Black', Arial, sans-serif; */
+    font-size: 170px;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+  }
+
+  .name-block .accent {
+    color: #6fdc1a;
+  }
+
+  .info-row {
+    display: flex;
+    gap: 120px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    margin-right: 90px;
+    margin-bottom: 100px;
+  }
+.info-col{
+  margin-right: 100px;
+/* display: flex;
+gap: 50px; */
+}
+.info-row-lower{
+  display: flex;
+  justify-content: space-between;
+  /* gap:620px; */
+  flex-direction: row;
+  /* border: #ff0080 2px solid; */
+}
+  .info-col h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .info-col p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--black);
+  }
+
+  .info-row.lower {
+    margin-top: 50px;
+  }
+
+  .address-block + .address-block {
+    margin-top: 28px;
+  }
+
+  .address-block h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .address-block p {
+    font-size: 16px;
+    color: var(--black);
+  }
+
+  .btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #17181a;
+  color: #ffffff;
+  font-family: 'inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-download-cv__icon {
+  color: #80FF00;
+  flex-shrink: 0;
+}
+
+.btn-download-cv:hover {
+  transform: translateY(-2px);
+  background-color: #000000;
+}
+
+.btn-download-cv:active {
+  transform: translateY(0);
+}
+
+ /* ===================== FOOTER ===================== */
+
+  .footer {
+    padding: 80px 60px 40px;
+    /* border: #6f00ff 2px solid ; */
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #aaa;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .socials a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 34px;
+    font-weight: 400;
+  }
+
+  .copyright {
+    text-align: right;
+    font-size: 12px;
+    color: gray;
+    margin-top: -20px;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+.reveal-line {
+  display: block;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.reveal-line.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ============================================================
+     BREAKPOINT: 1440px (Large desktop cap)
+     ============================================================ */
+  @media (max-width: 1440px) {
+    .navbar,
+    .hero,
+    .name-section,
+    .footer {
+      max-width: 100%;
+    }
+
+  }
+
+  /* ============================================================
+     BREAKPOINT: 1280px (Desktop)
+     ============================================================ */
+  @media (max-width: 1280px) {
+
+    /* .navbar {
+      padding: 26px 48px;
+    } */
+
+    .hero {
+      /* padding: 30px 48px; */
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      max-width: 600px;
+    }
+
+    .portrait {
+      width: 240px;
+    }
+
+    .portrait img {
+      aspect-ratio: 240 / 350;
+    }
+
+    .name-section {
+      padding: 88px 48px 0;
+    }
+
+    .name-block {
+      font-size: 150px;
+    }
+
+    .info-row {
+      gap: 90px;
+    }
+
+    .footer {
+      padding: 70px 48px 36px;
+    }
+  }
+
+  /* ============================================================
+     BREAKPOINT: 1024px (Small desktop / large tablet)
+     ============================================================ */
+  @media (max-width: 1024px) {
+
+    .navbar {
+      padding: 24px 40px;
+    }
+
+    .nav-links {
+      gap: 32px;
+    }
+
+    .hero {
+      /* padding: 30px 40px; */
+    }
+    .connector {
+      width: 250px;
+      height: 50px;
+      left: 50px;
+    }
+     .thats-me-pill{
+      bottom: 10px;
+      right: -50px;
+     }
+
+    .hero h1 {
+      font-size: 42px;
+      max-width: 540px;
+    }
+
+    .hero-media {
+      gap: 18px;
+    }
+.notes-card{
+  height: 330px;
+}
+    .portrait {
+      width: 220px;
+    }
+
+    .portrait img {
+      aspect-ratio: 220 / 320;
+    }
+
+    .name-section {
+      padding: 76px 40px 0;
+    }
+
+    .name-block {
+      font-size: 100px;
+      letter-spacing: -1.5px;
+    }
+
+    .info-row {
+      gap: 64px;
+      margin-top: 50px;
+    }
+
+    .footer {
+      padding: 64px 40px 36px;
+    }
+  }
+
+  /* ============================================================
+     BREAKPOINT: 768px (Tablet)
+     ============================================================ */
+  @media (max-width: 768px) {
+     .thats-me-pill{
+      right: -120px;
+      bottom: 20px;
+      /* display: none; */
+     }
+     .connector{
+      display: inline-block;
+      width: 150px;
+      height: 60px;
+     left: 120px;
+     }
+
+    .hero h1 {
+      font-size: 38px;
+      max-width: 100%;
+    }
+
+    .thats-me-row {
+      margin-top: 18px;
+    }
+
+    .hero-media {
+      flex-direction: row;
+      margin-top: 28px;
+      gap: 18px;
+    }
+
+    .notes-card {
+      width: 60%;
+      aspect-ratio: 16 / 10;
+    }
+
+    .portrait {
+       height:330px;
+      width: 100%;
+      max-width: 250px;
+    }
+
+    .portrait img {
+      aspect-ratio: 16 / 10;
+     
+    }
+
+    .name-section {
+      padding: 64px 32px 0;
+    }
+
+    .name-block {
+      font-size: 78px;
+      letter-spacing: -1px;
+    }
+    .info-col{
+      margin-right: 0px;
+    }
+
+    .info-row {
+      gap: 48px;
+      margin-top: 44px;
+    }
+
+    .info-row.lower {
+      flex-direction: row;
+      gap: 36px;
+    }
+
+    .footer {
+      padding: 32px;
+      margin-bottom: 100px;
+    }
+
+    .socials a {
+      font-size: 28px;
+    }
+  }
+
+
+@media (max-width: 480px) {
+.connector{
+  display: none;
+}
+
+ .thats-me-pill{
+  display: none;
+ }
+ 
+.name-services{
+  justify-content: space-between;
+  /* margin-top: 20px; */
+}
+
+  .navbar {
+   /* border: #06B9C6 2px solid ; */
+    padding: 0 20px;
+     /* padding: calc(var(--nav-height) + 24px) 20px 0; */
+    justify-content: space-between;
+    width: 100%;
+    
+  }
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .burger-btn {
+    display: flex;
+  }
+
+  .nav-links, .nav-cta { display: none; }
+  .burger-btn { display: flex; }
+
+  .btn-contact {
+    font-size: 0.78rem;
+    padding: 7px 16px;
+  }
+
+  .hero {
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .thats-me-pill {
+      font-size: 11px;
+      padding: 7px 14px;
+    }
+
+    .hero-media {
+      flex-direction: column-reverse;
+      margin-top: 22px;
+      gap: 14px;
+    }
+
+    .notes-card {
+      aspect-ratio: 16 / 11;
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    .notes-card span {
+      font-size: 10px;
+    }
+
+    .portrait {
+      max-width: 100%;
+    }
+   
+    .name-services{
+      flex-direction: row;
+      justify-content: space-between;
+      
+    }
+ 
+    .name-section {
+      padding: 48px 20px 0;
+    }
+
+    .name-block {
+      font-size: 65px;
+      letter-spacing: -0.5px;
+    }
+
+    .info-row {
+      flex-direction: row;
+      gap: 32px;
+      /* margin-top: 36px; */
+      align-self: flex-end;
+      margin-right: 80px;
+      margin-bottom: 25px;
+    }
+
+    .info-row.lower {
+      margin-top: 32px;
+    }
+
+    .info-col h3 {
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .info-col p {
+      font-size: 14px;
+    }
+
+    .address-block{
+      width: 150%;
+      /* border: #6f00ff 2px solid ; */
+    }
+
+    .address-block h3,
+    .address-block p {
+      font-size: 14px;
+    }
+
+     .btn-download-cv{
+      font-size: 0.8rem;
+      padding: 12px 12px;
+     }
+
+    .footer {
+      padding: 44px 20px 28px;
+      margin-bottom: 0px;
+    }
+
+    .divider {
+      margin-bottom: 28px;
+    }
+
+    .socials a {
+      font-size: 24px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .copyright {
+      margin-top: 0;
+      text-align: left;
+    }
+ }
+
+
+ 
+  /* ============================================================
+     BREAKPOINT: 375px (Small mobile)
+     ============================================================ */
+  @media (max-width: 375px) {
+
+    .navbar {
+      /* padding: 16px 18px; */
+    }
+
+    .hero {
+      /* padding: 0 18px; */
+    }
+
+    .hero h1 {
+      font-size: 24px;
+    }
+
+    .thats-me-pill {
+      font-size: 10px;
+      padding: 6px 12px;
+    }
+
+    .name-section {
+      padding: 40px 18px 0;
+    }
+
+    .name-block {
+      font-size: 52px;
+    }
+
+    .info-row {
+      margin-top: 30px;
+    }
+
+    .footer {
+      padding: 36px 18px 24px;
+    }
+
+    .socials a {
+      font-size: 21px;
+    }
+  }

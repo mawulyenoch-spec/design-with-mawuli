@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogbey Mawuli Enoch-Contact</title>
+    <link rel="stylesheet" href="./contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Paytone+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+<body>
+      <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <nav class="navbar">
+    <!-- Left: Logo / Name -->
+    <div class="nav-logo">
+      <div class="nav-avatar">
+        <img src="./Images/logo.png" alt="Avatar"/>    
+        <!-- <span class="avatar-placeholder"></span> -->
+      </div>
+      <a href="index.html"><span class="nav-name">Mawuli</span></a>
+    </div>
+
+    <!-- Centre: Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link ">Home</a></li>
+      <li><a href="./works.html" class="nav-link">Works</a></li>
+      <li><a href="./about-me.html" class="nav-link active">About</a></li>
+    </ul>
+
+    <!-- Right: CTA -->
+    <div class="nav-cta">
+      <a href="./contact.html" class="btn-contact">Get in touch</a>
+    </div>
+
+<!-- Burger button — only visible on small screens -->
+    <button class="burger-btn" id="burgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="burger-icon">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </span>
+    </button>
+  </nav>
+
+  <!-- Full-screen mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <p class="mobile-menu-label">NAVIGATION</p>
+    <hr class="mobile-menu-divider">
+    <ul class="mobile-menu-links">
+      <li>
+        <a href="index.html" class="mobile-link ">Home</a>
+      </li>
+      <li><a href="./works.html" class="mobile-link">Works</a></li>
+      <li>
+        <a href="about-me.html" class="mobile-link active">About</a>
+      </li>
+      <li>
+        <a href="./contact.html" class="mobile-link">Get in touch</a>
+        <span class="mobile-link-dot"></span>
+    </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CONTACT HERO
+═══════════════════════════════════════ -->
+<section class="contact-hero" id="contact-hero">
+  <div class="contact-hero__inner">
+<span class="reveal-line">
+    <div class="contact-hero__title-row">
+         <span class="contact-hero__badge">
+        <img src="./Images/badge-mark.png" alt="" class="contact-hero__badge-icon">
+      </span>
+      <h1 class="contact-hero__title">  Let's work <br><span class="reveal-line"> together</h1></span>
+    </div>
+     
+    <p class="contact-hero__subtitle">
+       Please fill out the form, and I will get back to you within <strong>24 hours.</strong>
+    </p>
+
+    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+      <!-- Web3Forms config -->
+      <input type="hidden" name="access_key" value="94406b95-7c8c-4f31-8640-00dbd6b45c56">
+      <input type="hidden" name="subject" value="New message — Design with Mawuli">
+      <input type="hidden" name="from_name" value="Design with Mawuli — Contact Form">
+      <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" aria-hidden="true" autocomplete="off">
+
+      <div class="contact-form__group">
+        <input type="text" name="name" id="name" class="contact-form__input" placeholder="Name" aria-label="Name" required>
+      </div>
+
+      <div class="contact-form__group">
+        <input type="email" name="email" id="email" class="contact-form__input" placeholder="Email" aria-label="Email" required>
+      </div>
+
+      <div class="contact-form__group">
+        <input type="text" name="services" id="services" class="contact-form__input" placeholder="Services" aria-label="Services">
+      </div>
+
+      <div class="contact-form__group contact-form__group--textarea">
+        <label for="organization" class="contact-form__label">Tell us about your Organization</label>
+        <textarea name="organization" id="organization" class="contact-form__textarea" rows="5"></textarea>
+      </div>
+
+      <div class="contact-form__group">
+        <input type="text" name="message" id="message" class="contact-form__input" placeholder="leave a message" aria-label="Message">
+      </div>
+
+      <div class="contact-form__submit-row">
+        <p class="contact-form__status" id="formStatus" role="status" aria-live="polite"></p>
+
+        <button type="submit" class="contact-form__submit" id="formSubmit">
+          <span class="contact-form__submit-text">send</span>
+          <span class="contact-form__submit-icon"><i class="ti ti-arrow-right"></i></span>
+        </button>
+      </div>
+    </form>
+
+  </div>
+
+<div class="foot">
+  <div class="contact-hero__character" aria-hidden="true">
+    <img src="./Images/character3.png" alt="" class="contact-hero__character-img">
+  </div>
+
+ <footer class="footer">
+    <!-- <hr class="divider"> -->
+    <div class="footer-bottom">
+      <div class="socials">
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/designwithmawuli/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <!-- <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a> -->
+        <a href="#" target="_blank" rel="noopener noreferrer">Tiktok</a>
+      </div>
+      <div class="footer-last">
+        <a href="mailto:Mawulyenoch@gmail.com" class="footer-email">Mawulyenoch@gmail.com</a>
+        <!-- <div class="copyright">@Copyright 2026</div> -->
+      </div>
+    </div>
+  </footer>
+</div>
+</section>
+
+<script src="./main2.js"></script>
+</body>
+</html>

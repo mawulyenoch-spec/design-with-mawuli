@@ -14,12 +14,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
-
   <!-- ═══════════════════════════════════════
        NAVBAR
   ═══════════════════════════════════════ -->
   <nav class="navbar">
-
     <!-- Left: Logo / Name -->
     <div class="nav-logo">
       <div class="nav-avatar">
@@ -31,18 +29,42 @@
 
     <!-- Centre: Links -->
     <ul class="nav-links">
-      <li><a href="#home" class="nav-link active">Home</a></li>
-      <li><a href="#works" class="nav-link">Works</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="./works.html" class="nav-link">Works</a></li>
+      <li><a href="./about-me.html" class="nav-link">About</a></li>
     </ul>
 
     <!-- Right: CTA -->
     <div class="nav-cta">
-      <a href="#contact" class="btn-contact">Get in touch</a>
+      <a href="./contact.html" class="btn-contact">Get in touch</a>
     </div>
+
+<!-- Burger button — only visible on small screens -->
+    <button class="burger-btn" id="burgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="burger-icon">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </span>
+    </button>
 
   </nav>
 
+  <!-- Full-screen mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <p class="mobile-menu-label">NAVIGATION</p>
+    <hr class="mobile-menu-divider">
+    <ul class="mobile-menu-links">
+      <li>
+        <a href="./index.html" class="mobile-link active">Home</a>
+        <span class="mobile-link-dot"></span>
+      </li>
+      <li><a href="./works.html" class="mobile-link">Works</a></li>
+      <li><a href="./about-me.html" class="mobile-link">About</a></li>
+      <li><a href="./contact.html" class="mobile-link">Get in touch</a></li>
+    </ul>
+  </div>
+</div>
 
   <!-- ═══════════════════════════════════════
        HERO SECTION
@@ -63,7 +85,7 @@
         <span class="word">Enoch</span>
       </h1>
       <div class="hero-titles">
-        <span class="word">Motion Artist/Developer</span>
+        <span class="word">Designer/Developer</span>
         <div class="magician"><span class="word">• Visual Magician</span></div>
       </div>
       <p class="hero-bio">
@@ -75,6 +97,13 @@
   <!-- Floating 3-D objects (left side) — images added later -->
     <div class="hero-objects">
 
+      <div class="music">
+        <img src="./Images/record-player.png">
+        <audio >
+           <source src="./music/Gunna - Bittersweet .mp3" type="audio/mpeg">
+        </audio>
+      </div>
+        
       <div class="object-cube hover-3d">
         <img src="./Images/charger.png" alt="Charger cube 3D object">
       </div>
@@ -93,6 +122,7 @@
    </section>
 
    </div>
+
    <div class="container-2">
      <div class="section-2">
     <div class="mini-bio">
@@ -101,8 +131,9 @@
         <span class="reveal-line">Together we will set the new status quo.</span>
         <span class="reveal-line">No nonsense, always on the cutting edge.</span>
       </p>
+      
       <div class="about-me">
-         <button class="btn-about"> About me<a href="about.html" target="_blank"> </a></button>
+         <button class="btn-about"> <a href="./about-me.html" >About me </a></button>
       </div>
     </div>
   </div>
@@ -120,15 +151,10 @@
     <div class="cards-track" id="track">
 
       <div class="card">
-        <svg class="card-thumb-color" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <rect width="300" height="400" fill="#D4C5B0"/>
-          <rect x="0" y="220" width="300" height="180" fill="#B8A898" opacity="0.6"/>
-          <circle cx="150" cy="160" r="55" fill="#8B7355" opacity="0.5"/>
-          <rect x="60" y="80" width="80" height="60" rx="4" fill="#9B8B78" opacity="0.4"/>
-          <rect x="180" y="100" width="60" height="40" rx="4" fill="#7A6B5A" opacity="0.3"/>
-          <rect x="30" y="300" width="120" height="70" rx="4" fill="#6B5C4E" opacity="0.3"/>
-          <rect x="0" y="340" width="300" height="60" fill="#A09080" opacity="0.25"/>
-        </svg>
+        <img src="./Images/shot-1.png" ></img>
+        <video >
+            <source src="./videos/video1.mp4"></source>
+          </video>
         <div class="play-btn">
           <svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
         </div>
@@ -138,15 +164,10 @@
       </div>
 
       <div class="card">
-        <svg class="card-thumb-color" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <rect width="300" height="400" fill="#0A0A0A"/>
-          <radialGradient id="rg1" cx="50%" cy="80%" r="65%">
-            <stop offset="0%" stop-color="#8B0000" stop-opacity="0.9"/>
-            <stop offset="60%" stop-color="#3D0000" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
-          </radialGradient>
-          <rect width="300" height="400" fill="url(#rg1)"/>
-        </svg>
+       <img src="./Images/memtum.png" class="shot-3"></img>
+        <video >
+            <source src="./videos/investors.mp4"></source>
+          </video>
         <div class="play-btn">
           <svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
         </div>
@@ -156,54 +177,40 @@
       </div>
 
       <div class="card">
-        <svg class="card-thumb-color" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <rect width="300" height="400" fill="#C8D8C0"/>
-          <rect x="0" y="0" width="300" height="200" fill="#A8C4A0" opacity="0.5"/>
-          <circle cx="80" cy="60" r="25" fill="#6B9E6B" opacity="0.6"/>
-          <circle cx="220" cy="80" r="18" fill="#5A8E5A" opacity="0.5"/>
-          <circle cx="140" cy="40" r="14" fill="#7BAD7B" opacity="0.55"/>
-          <rect x="0" y="200" width="300" height="200" fill="#9BBAA8" opacity="0.4"/>
-          <rect x="100" y="180" width="80" height="120" rx="6" fill="#8BA898" opacity="0.4"/>
-          <circle cx="240" cy="320" r="30" fill="#7A9A88" opacity="0.3"/>
-        </svg>
+        <img src="./Images/shot-2.png" class="shot-v"></img>
+        <video >
+            <source src="./videos/video3.mp4"></source>
+          </video>
         <div class="play-btn">
           <svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
         </div>
         <div class="arrow-btn">
           <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </div>
-        <div class="avatar-pip visible">
-          <div class="avatar-pip-color"></div>
         </div>
       </div>
-
-      <!-- <div class="card">
-        <svg class="card-thumb-color" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <rect width="300" height="400" fill="#1C1C2E"/>
-          <radialGradient id="rg2" cx="30%" cy="50%" r="60%">
-            <stop offset="0%" stop-color="#4B0082" stop-opacity="0.85"/>
-            <stop offset="100%" stop-color="#1C1C2E" stop-opacity="0"/>
-          </radialGradient>
-          <rect width="300" height="400" fill="url(#rg2)"/>
-          <circle cx="180" cy="140" r="60" fill="#2A1A4E" opacity="0.6"/>
-        </svg>
-        <div class="play-btn">
-          <svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
-        </div>
-        <div class="arrow-btn">
-          <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </div>
-      </div> -->
 
     </div>
   </div>
 
   <div class="dots" id="dots" role="tablist" aria-label="Carousel navigation"></div>
 
-  <button class="more-btn">More</button>
+  <a href="./works.html"><button class="more-btn"> More</button></a>
 </div>
+</div>
+</div>
+
+<!-- Shared video modal -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
+  <div class="video-modal-content">
+    <button class="video-modal-close" id="videoModalClose" aria-label="Close video">&times;</button>
+    <video id="modalVideo" controls playsinline>
+      <source id="modalVideoSource" src="" type="video/mp4">
+    </video>
   </div>
 </div>
+
+
   <div class="container4">
     <div class="section4">
       <div class="subject">
@@ -236,7 +243,12 @@
     <!-- Video card -->
     <div class="mw-video-wrap" id="videoWrap" role="button" tabindex="0" aria-label="Play project video">
       <!-- Placeholder aerial-view thumbnail (SVG) -->
-    
+     <img src="./Images/estate1.png" id="videoThumb"></img>
+
+     <!-- ADD THE VIDEO HERE, right after the thumbnail -->
+      <video id="mwVideo" playsinline preload="metadata" controls>
+        <source src="./videos/nhyira-city-estate1.mp4" type="video/mp4"></video>
+      </video>
       <!-- Play button -->
       <div class="mw-play" aria-hidden="true">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -361,26 +373,42 @@
 <div class="container7">
   <div class="section7">
     <div class="pitch-in">
-
      <!-- <div class="character2"> -->
       <img src="./Images/chracter 2.png"></img>
     <!-- </div>  -->
   <div class="pitch-text">
-    <p ><a href="">Let’s Pitch In </a></p>
-    
-  <a href="#" class="circle-arrow-btn" aria-label="Next">
+    <div class="reveal-line">
+      <p ><a href="./contact.html" class="gradient-hover" >Let’s Pitch In </a></p>
+    </div>
+    <div class="reveal-line"> <a href="./contact.html" class="circle-arrow-btn" aria-label="Next">
   <i class="ti ti-arrow-right" aria-hidden="true"></i>
-</a>
-      
-  </div>
+</a></div>
   
+  </div>
     </div>
   </div>
-  
-
-
 </div>
 
-  <script src="./main.js"></script>
+<footer class="site-footer">
+  <div class="footer-brand">
+    <img src="./Images/logo.png" alt="Mawuli logo" class="footer-logo">
+    <span class="footer-name">Mawuli</span>
+  </div>
+
+  <div class="footer-copyright">
+    &copy;Copyright 2026
+  </div>
+
+  <div class="footer-contact">
+    <a href="mailto:Mawulyenoch@gmail.com" class="footer-email">Mawulyenoch@gmail.com</a>
+    <div class="footer-socials">
+      <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/designwithmawuli/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Tiktok</a>
+    </div>
+  </div>
+</footer>
+  <script src="./main2.js"></script>
 </body>
 </html>

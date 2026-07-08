@@ -525,3 +525,168 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.setAttribute('aria-pressed', 'true');
       });
     });
+
+
+    // <from the work section>
+
+    // ─────────────────────────────────────
+    // PROJECT DATA — case-study modal (video projects for now)
+    // `media` is an ordered array rendered top-to-bottom in the modal.
+    // Swap placeholder srcs for real assets (1920x1080 recommended
+    // for the images, per your spec). `deepLink: true` makes a
+    // project shareable via ?project=<id> in the URL.
+    // ─────────────────────────────────────
+    const PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='800' height='450' fill='%23d9d9d9'/%3E%3C/svg%3E";
+ 
+    const PROJECTS = {
+      'proj-03': {
+        title: 'Product Teaser — Motion Reel',
+        tag: 'Motion Graphics',
+        deepLink: true,
+        media: [
+          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
+          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
+          { type: 'video', src: '', poster: PLACEHOLDER_IMG }
+          // <source> left empty above — add the real video path when ready
+        ]
+      },
+      'proj-06': {
+        title: 'Behind-the-Scenes Edit',
+        tag: 'Motion Graphics',
+        deepLink: false,
+        media: [
+          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
+          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
+          { type: 'video', src: '', poster: PLACEHOLDER_IMG }
+        ]
+      }
+    };
+ 
+    // ─────────────────────────────────────
+    // CASE-STUDY MODAL LOGIC
+    // ─────────────────────────────────────
+    const caseModal = document.getElementById('caseModal');
+    const caseModalTitle = document.getElementById('caseModalTitle');
+    const caseModalTag = document.getElementById('caseModalTag');
+    const caseModalMediaStack = document.getElementById('caseModalMediaStack');
+ 
+    let lastFocusedEl = null;
+ 
+    function openCaseModal(projectId, triggerEl) {
+      const data = PROJECTS[projectId];
+      if (!caseModal || !data) return;
+ 
+      lastFocusedEl = triggerEl || document.activeElement;
+ 
+      caseModalTitle.textContent = data.title;
+      caseModalTag.textContent = data.tag;
+ 
+      caseModalMediaStack.innerHTML = '';
+      data.media.forEach(item => {
+        const block = document.createElement('div');
+        block.className = 'case-modal-media-item';
+ 
+        if (item.type === 'video') {
+          const video = document.createElement('video');
+          video.poster = item.poster || '';
+          video.controls = true;
+          video.playsInline = true;
+          if (item.src) {
+            const source = document.createElement('source');
+            source.src = item.src;
+            source.type = 'video/mp4';
+            video.appendChild(source);
+          }
+          block.appendChild(video);
+        } else {
+          const img = document.createElement('img');
+          img.src = item.src;
+          img.alt = item.alt || '';
+          block.appendChild(img);
+        }
+ 
+        caseModalMediaStack.appendChild(block);
+      });
+ 
+      if (data.deepLink) {
+        history.replaceState(null, '', `?project=${projectId}`);
+      } else if (window.location.search.includes('project=')) {
+        history.replaceState(null, '', window.location.pathname);
+      }
+ 
+      caseModal.classList.add('is-open');
+      document.body.classList.add('modal-open');
+      document.addEventListener('keydown', handleCaseModalKeydown);
+ 
+      const closeBtn = caseModal.querySelector('.case-modal-close');
+      if (closeBtn) closeBtn.focus();
+    }
+ 
+    function closeCaseModal() {
+      if (!caseModal || !caseModal.classList.contains('is-open')) return;
+ 
+      caseModal.classList.remove('is-open');
+      document.body.classList.remove('modal-open');
+      document.removeEventListener('keydown', handleCaseModalKeydown);
+ 
+      if (window.location.search.includes('project=')) {
+        history.replaceState(null, '', window.location.pathname);
+      }
+ 
+      if (lastFocusedEl) lastFocusedEl.focus();
+    }
+ 
+    function handleCaseModalKeydown(e) {
+      if (e.key === 'Escape') {
+        closeCaseModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        const focusables = caseModal.querySelectorAll(
+          'button, [href], video[controls], [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+ 
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+ 
+    caseModal.querySelectorAll('[data-modal-close]').forEach(el => {
+      el.addEventListener('click', closeCaseModal);
+    });
+ 
+    document.querySelectorAll('.project-card[data-project-id]').forEach(card => {
+      const projectId = card.dataset.projectId;
+      const data = PROJECTS[projectId];
+      if (data) card.setAttribute('aria-label', `View project: ${data.title}`);
+ 
+      card.addEventListener('click', () => openCaseModal(projectId, card));
+    });
+ 
+    // Auto-open on load if the URL already has ?project=<deepLink-enabled id>
+    const urlParams = new URLSearchParams(window.location.search);
+    const deepLinkId = urlParams.get('project');
+    if (deepLinkId && PROJECTS[deepLinkId] && PROJECTS[deepLinkId].deepLink) {
+      openCaseModal(deepLinkId, null);
+    }
+ 
+    // Basic active-state toggle so you can click through the pills while reviewing.
+    // Filtering logic itself comes later once the project grid exists.
+    document.querySelectorAll('.filter-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-pill').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+      });
+    });

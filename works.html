@@ -83,8 +83,77 @@
       </div>
     </div>
   </section>
-
-
+<!-- !-- ═══════════════════════════════════════
+       PROJECT GRID — first section, all cards
+       sit under "All" for now (data-category="all").
+       Section title/index ("Social media designs / 01")
+       intentionally left out per your instruction —
+       add that markup whenever you're ready for it.
+  ═══════════════════════════════════════ -- -->
+  <section class="works-grid reveal-line" data-category-group="all">
+    <div class="works-grid-inner">
+ 
+      <div class="project-card" data-type="image" data-category="all">
+        <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
+      </div>
+ 
+      <div class="project-card" data-type="image" data-category="all">
+        <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
+      </div>
+ 
+      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-03">
+        <video class="project-thumb" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" muted loop playsinline>
+          <!-- <source src="./Videos/works/your-video.mp4" type="video/mp4"> -->
+        </video>
+        <span class="play-btn" aria-hidden="true">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </button>
+ 
+      <div class="project-card" data-type="image" data-category="all">
+        <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
+      </div>
+ 
+      <div class="project-card" data-type="image" data-category="all">
+        <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
+      </div>
+ 
+      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-06">
+        <video class="project-thumb" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" muted loop playsinline>
+          <!-- <source src="./Videos/works/your-video.mp4" type="video/mp4"> -->
+        </video>
+        <span class="play-btn" aria-hidden="true">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </button>
+ 
+    </div>
+  </section>
+ 
+  <!-- ═══════════════════════════════════════
+       CASE-STUDY MODAL — used by the video projects
+       for now. Reusable: content comes from the
+       PROJECTS object below, keyed by data-project-id.
+       Image-only project modal design is still TBD.
+  ═══════════════════════════════════════ -->
+  <div class="case-modal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+    <div class="case-modal-overlay" data-modal-close></div>
+ 
+    <div class="case-modal-content">
+      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71 12 12l6.29 6.29-1.41 1.42L10.59 13.41 4.3 19.71 2.89 18.29 9.17 12 2.89 5.71 4.3 4.29l6.29 6.3 6.3-6.3z"/></svg>
+      </button>
+ 
+      <div class="case-modal-header">
+        <h2 class="case-modal-title" id="caseModalTitle"></h2>
+        <span class="case-modal-tag" id="caseModalTag"></span>
+      </div>
+ 
+      <div class="case-modal-media-stack" id="caseModalMediaStack">
+        <!-- populated by JS: image/image/video blocks, in order -->
+      </div>
+    </div>
+  </div>
 
 
   

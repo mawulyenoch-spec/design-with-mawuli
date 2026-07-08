@@ -425,6 +425,7 @@ body.menu-open { overflow: hidden; }
   .sticker:hover {
     cursor: pointer;
     animation: stickerWiggle 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    
   }
 
   
@@ -480,9 +481,6 @@ body.menu-open { overflow: hidden; }
   opacity: 1;
 }
 
-
-
-
   /* Responsive */
   @media (max-width: 1280px) {
     .works-heading { font-size: 86px; }
@@ -520,6 +518,262 @@ body.menu-open { overflow: hidden; }
 
 
 
+/* ═══════════════════════════════════════
+     PROJECT GRID
+  ═══════════════════════════════════════ */
+  .works-grid {
+    padding: 0 80px 100px;
+  }
+ 
+  .works-grid-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+ 
+  .project-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #d4d4d2;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.35s ease;
+  }
+ 
+  .project-card:hover {
+    transform: scale(1.03);
+    z-index: 2;
+  }
+ 
+  .project-card:focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 3px;
+  }
+ 
+  .project-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none; /* card itself is the click target */
+  }
+ 
+  /* Video play icon — decorative overlay, lime circle + black triangle.
+     Not a real <button>: the whole .project-card is the click target,
+     avoiding a nested interactive control inside another one. */
+  .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+ 
+  .project-card:hover .play-btn {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+ 
+  .play-icon {
+    width: 50px;
+    height: 50px;
+    fill: var(--color-black);
+  }
+ 
+  @media (max-width: 1024px) {
+    .works-grid { padding: 0 40px 80px; }
+    .works-grid-inner { gap: 18px; }
+
+    .play-icon {
+    width: 40px;
+    height: 40px;
+  }
+   .play-btn{
+    width: 70px;
+    height: 70px;
+   }
+
+
+  }
+ 
+  @media (max-width: 768px) {
+    .works-grid-inner {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .play-btn { width: 70px; height: 70px; }
+
+   .play-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  }
+ 
+  @media (max-width: 480px) {
+    .works-grid { padding: 0 20px 60px; }
+    .works-grid-inner {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+  .play-btn { width: 50px; height: 50px; }
+
+   .play-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  }
+ 
+  @media (max-width: 375px) {
+    .works-grid-inner {
+      grid-template-columns: repeat(2, 1fr);;
+      gap: 14px;
+    }
+ 
+  }
+ 
+  /* ═══════════════════════════════════════
+     CASE-STUDY MODAL (video projects)
+  ═══════════════════════════════════════ */
+  .case-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+ 
+  .case-modal.is-open {
+    display: flex;
+  }
+ 
+  .case-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(23, 24, 26, 0.75);
+  }
+ 
+  .case-modal-content {
+    position: relative;
+    background-color: #b0b0af;
+    border-radius: 20px;
+    padding: 28px;
+    max-width: 1280px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+ 
+  .case-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+ 
+  .case-modal-close svg {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
+  }
+ 
+  .case-modal-close:focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 2px;
+  }
+ 
+  .case-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-right: 44px; /* keeps title clear of the close button */
+  }
+ 
+  .case-modal-title {
+    font-family: 'Paytone One', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--color-black);
+  }
+ 
+  .case-modal-tag {
+    flex-shrink: 0;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: var(--color-black);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 999px;
+  }
+ 
+  .case-modal-media-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+ 
+  .case-modal-media-item {
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #d9d9d9;
+    aspect-ratio: 16 / 9;
+  }
+ 
+  .case-modal-media-item img,
+  .case-modal-media-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+ 
+  body.modal-open {
+    overflow: hidden;
+  }
+ 
+  @media (max-width: 768px) {
+    .case-modal-content { padding: 20px; border-radius: 22px; }
+    .case-modal-title { font-size: 19px; }
+    .case-modal-media-stack { gap: 16px; }
+  }
+ 
+  @media (max-width: 480px) {
+    .case-modal { padding: 20px 16px; }
+    .case-modal-header { flex-direction: column; align-items: flex-start; gap: 10px; padding-right: 0; }
+    .case-modal-tag { align-self: flex-start; }
+  }
 
 
 
@@ -534,6 +788,12 @@ body.menu-open { overflow: hidden; }
 
 
 
+
+
+
+
+
+  /* <navbar stuff> */
 
 @media (max-width: 480px) {
       .navbar {

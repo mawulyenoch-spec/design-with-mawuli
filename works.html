@@ -83,25 +83,134 @@
       </div>
     </div>
   </section>
-<!-- !-- ═══════════════════════════════════════
+   
+
+<!-- ═══════════════════════════════════════
        PROJECT GRID — first section, all cards
        sit under "All" for now (data-category="all").
        Section title/index ("Social media designs / 01")
        intentionally left out per your instruction —
        add that markup whenever you're ready for it.
-  ═══════════════════════════════════════ -- -->
+  ═══════════════════════════════════════ -->
+  <section class="works-grid reveal-line" data-category-group="all">
+    <div class="works-grid-inner">
+      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-01">
+        <img class="project-thumb" src="./Images/011.png"alt="TODO: describe this project">
+      </button>
+ 
+      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-02">
+        <img class="project-thumb" src="./Images/044.png" alt="TODO: describe this project">
+      </button>
+ 
+      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-03">
+        <video class="project-thumb" poster="./Images/077.png">
+          <!-- <source src="./Videos/works/your-video.mp4" type="video/mp4"> -->
+        </video>
+        <span class="play-btn" aria-hidden="true">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </button>
+
+      <button type="button" class="project-card " data-type="image" data-category="all" data-project-id="proj-04">
+        <img class="project-thumb" src="./Images/033.png">
+      </button>
+ 
+      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-05">
+        <img class="project-thumb" src="./Images/022.png">
+      </button>
+ 
+      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-06">
+        <video class="project-thumb" poster="./Images/vmemtum.png" muted loop playsinline>
+          <!-- <source src="./Videos/works/your-video.mp4" type="video/mp4"> -->
+        </video>
+        <span class="play-btn" aria-hidden="true">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </button>
+ 
+    </div>
+  </section>
+ 
+  <!-- ═══════════════════════════════════════
+       CASE-STUDY MODAL — used by the video projects.
+       Slide-up-from-bottom + fade-in, same pattern as
+       the image detail panel below. Content comes from
+       the PROJECTS object in works.js, keyed by data-project-id.
+  ═══════════════════════════════════════ -->
+  <div class="case-modal" id="caseModal">
+    <div
+      class="case-modal-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="caseModalTitle"
+    >
+      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>×</button>
+ 
+      <div class="case-modal-inner">
+        <div class="case-modal-header">
+          <h2 class="case-modal-title" id="caseModalTitle"></h2>
+          <span class="case-modal-tag" id="caseModalTag"></span>
+        </div>
+ 
+        <div class="case-modal-media-stack" id="caseModalMediaStack">
+          <!-- populated by JS: image/image/video blocks, in order -->
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════
+       IMAGE DETAIL PANEL — used by the 4 image-only
+       projects. Slides up from the bottom to ~88% of
+       viewport height, small gap left at the top.
+       Content: image + small caption, from IMAGE_PROJECTS in works.js.
+  ═══════════════════════════════════════ -->
+  <div class="image-panel" id="imagePanel">
+    <div
+      class="image-panel-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project image detail"
+    >
+      <button class="image-panel-close" type="button" aria-label="Close" data-image-panel-close>×</button>
+ 
+      <div class="image-panel-media">
+        <img id="imagePanelImg" src="" alt="">
+      </div>
+ 
+      <div class="image-panel-caption" id="imagePanelCaption"></div>
+    </div>
+  </div>
+
+  <!-- <second grid section> -->
+
+<!-- ═══════════════════════════════════════
+       PROJECT GRID — . Mixed layout:
+       row 1 is 3 standard cards, row 2 has 1 standard
+       card + 1 wide card (spans 2 columns) that opens
+       a PDF instead of the usual image/video panel.
+  ═══════════════════════════════════════ -->
   <section class="works-grid reveal-line" data-category-group="all">
     <div class="works-grid-inner">
  
-      <div class="project-card" data-type="image" data-category="all">
+      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-07">
         <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
-      </div>
+      </button>
  
-      <div class="project-card" data-type="image" data-category="all">
+      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-08">
+        <video class="project-thumb" poster="./Images/066.png" muted loop playsinline>
+          <source src="./videos/nhyira-city-estate1.mp4" type="video/mp4">
+        </video>
+        <span class="play-btn" aria-hidden="true">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </button>
+ 
+      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-09">
         <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
-      </div>
+      </button>
  
-      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-03">
+      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-10">
         <video class="project-thumb" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" muted loop playsinline>
           <!-- <source src="./Videos/works/your-video.mp4" type="video/mp4"> -->
         </video>
@@ -110,15 +219,192 @@
         </span>
       </button>
  
-      <div class="project-card" data-type="image" data-category="all">
-        <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
+      <!-- Wide PDF card — thumbnail is just a cover image, click opens the PDF panel -->
+      <button type="button" class="project-card project-card--wide" data-type="pdf" data-category="all" data-project-id="proj-11">
+        <img class="project-thumb " src="./Images/SOCIAL logo.png">
+      </button>
+    </div>
+  </section>
+ 
+<!-- ═══════════════════════════════════════
+       PROJECT GRID — section 5. Single full-width
+       video card for the motion reel, spanning the
+       entire grid width via .project-card--full.
+  ═══════════════════════════════════════ -->
+  <section class="works-grid reveal-line" data-category-group="all">
+    <div class="works-grid-inner">
+ 
+      <button type="button" class="project-card project-card--full" data-type="video" data-category="all" data-project-id="proj-17">
+        <video class="project-thumb" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='350'%3E%3Crect width='1200' height='350' fill='%23d4d4d2'/%3E%3C/svg%3E" muted loop playsinline>
+          <!-- <source src="./Videos/works/motion-reel.mp4" type="video/mp4"> -->
+        </video>
+        <span class="play-btn" aria-hidden="true">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </button>
+ 
+    </div>
+  </section>
+ 
+  <!-- ═══════════════════════════════════════
+       CASE-STUDY MODAL — used by the video projects.
+       Same slide-up-from-bottom + fade-in pattern as
+       the image detail panel, for a consistent feel
+       across the whole grid. Content comes from the
+       PROJECTS object below, keyed by data-project-id.
+  ═══════════════════════════════════════ -->
+  <div class="case-modal" id="caseModal">
+    <div
+      class="case-modal-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="caseModalTitle"
+    >
+      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>×</button>
+ 
+      <div class="case-modal-inner">
+        <div class="case-modal-header">
+          <h2 class="case-modal-title" id="caseModalTitle"></h2>
+          <span class="case-modal-tag" id="caseModalTag"></span>
+        </div>
+ 
+        <div class="case-modal-media-stack" id="caseModalMediaStack">
+          <!-- populated by JS: image/image/video blocks, in order -->
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════
+       IMAGE DETAIL PANEL — used by the 4 image-only
+       projects. Slides up from the bottom to ~88% of
+       viewport height, small gap left at the top.
+       Content: image + small caption, from IMAGE_PROJECTS.
+  ═══════════════════════════════════════ -->
+  <div class="image-panel" id="imagePanel">
+    <div
+      class="image-panel-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project image detail"
+    >
+      <button class="image-panel-close" type="button" aria-label="Close" data-image-panel-close>×</button>
+ 
+      <div class="image-panel-media">
+        <img id="imagePanelImg" src="" alt="">
       </div>
  
-      <div class="project-card" data-type="image" data-category="all">
-        <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
+      <div class="image-panel-caption" id="imagePanelCaption"></div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       CASE-STUDY MODAL — used by the video projects.
+       Same slide-up-from-bottom + fade-in pattern as
+       the image detail panel, for a consistent feel
+       across the whole grid. Content comes from the
+       PROJECTS object below, keyed by data-project-id.
+  ═══════════════════════════════════════ -->
+  <div class="case-modal" id="caseModal">
+    <div
+      class="case-modal-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="caseModalTitle"
+    >
+      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>×</button>
+ 
+      <div class="case-modal-inner">
+        <div class="case-modal-header">
+          <h2 class="case-modal-title" id="caseModalTitle"></h2>
+          <span class="case-modal-tag" id="caseModalTag"></span>
+        </div>
+ 
+        <div class="case-modal-media-stack" id="caseModalMediaStack">
+          <!-- populated by JS: image/image/video blocks, in order -->
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════
+       IMAGE DETAIL PANEL — used by the 4 image-only
+       projects. Slides up from the bottom to ~88% of
+       viewport height, small gap left at the top.
+       Content: image + small caption, from IMAGE_PROJECTS.
+  ═══════════════════════════════════════ -->
+  <div class="image-panel" id="imagePanel">
+    <div
+      class="image-panel-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project image detail"
+    >
+      <button class="image-panel-close" type="button" aria-label="Close" data-image-panel-close>×</button>
+ 
+      <div class="image-panel-media">
+        <img id="imagePanelImg" src="" alt="">
       </div>
  
-      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-06">
+      <div class="image-panel-caption" id="imagePanelCaption"></div>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════
+       PDF PANEL — used by the wide "PDF" project card.
+       Same slide-up-from-bottom + fade-in pattern as the
+       other two panels; content is an embedded PDF instead
+       of image/video. Src comes from PDF_PROJECTS in the script.
+  ═══════════════════════════════════════ -->
+  <div class="pdf-panel" id="pdfPanel">
+    <div
+      class="pdf-panel-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project process document"
+    >
+      <button class="pdf-panel-close" type="button" aria-label="Close" data-pdf-panel-close>×</button>
+      <iframe class="pdf-panel-frame" id="pdfPanelFrame" title="Project process document" hidden></iframe>
+      <div class="pdf-panel-empty" id="pdfPanelEmpty">PDF preview will appear here — add a real file path in PDF_PROJECTS.</div>
+    </div>
+  </div>
+
+    <!-- <second grid section> -->
+
+   <!-- <third grid section> -->
+
+<!-- ═══════════════════════════════════════
+       PROJECT GRID — section 4. Mirrors section 3's
+       mixed layout, just reordered: row 1 is a standard
+       card + the wide PDF card, row 2 is 3 standard cards.
+  ═══════════════════════════════════════ -->
+  <section class="works-grid reveal-line" data-category-group="all">
+    <div class="works-grid-inner">
+ <!-- Wide PDF card — thumbnail is just a cover image, click opens the PDF panel -->
+      <button type="button" class="project-card project-card--wide" data-type="pdf" data-category="all" data-project-id="proj-13">
+        <img class="project-thumb" src="./Images/hair.png" alt="TODO: describe this project">
+      </button>
+
+
+      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-12">
+        <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
+      </button>
+
+      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-16">
+        <video class="project-thumb" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" muted loop playsinline>
+          <!-- <source src="./Videos/works/your-video.mp4" type="video/mp4"> -->
+        </video>
+        <span class="play-btn" aria-hidden="true">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </button>
+
+      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-15">
+        <img class="project-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" alt="TODO: describe this project">
+      </button>
+
+       <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-14">
         <video class="project-thumb" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23d4d4d2'/%3E%3C/svg%3E" muted loop playsinline>
           <!-- <source src="./Videos/works/your-video.mp4" type="video/mp4"> -->
         </video>
@@ -131,32 +417,97 @@
   </section>
  
   <!-- ═══════════════════════════════════════
-       CASE-STUDY MODAL — used by the video projects
-       for now. Reusable: content comes from the
+       CASE-STUDY MODAL — used by the video projects.
+       Same slide-up-from-bottom + fade-in pattern as
+       the image detail panel, for a consistent feel
+       across the whole grid. Content comes from the
        PROJECTS object below, keyed by data-project-id.
-       Image-only project modal design is still TBD.
   ═══════════════════════════════════════ -->
-  <div class="case-modal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
-    <div class="case-modal-overlay" data-modal-close></div>
+  <div class="case-modal" id="caseModal">
+    <div
+      class="case-modal-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="caseModalTitle"
+    >
+      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>×</button>
  
-    <div class="case-modal-content">
-      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71 12 12l6.29 6.29-1.41 1.42L10.59 13.41 4.3 19.71 2.89 18.29 9.17 12 2.89 5.71 4.3 4.29l6.29 6.3 6.3-6.3z"/></svg>
-      </button>
+      <div class="case-modal-inner">
+        <div class="case-modal-header">
+          <h2 class="case-modal-title" id="caseModalTitle"></h2>
+          <span class="case-modal-tag" id="caseModalTag"></span>
+        </div>
  
-      <div class="case-modal-header">
-        <h2 class="case-modal-title" id="caseModalTitle"></h2>
-        <span class="case-modal-tag" id="caseModalTag"></span>
-      </div>
- 
-      <div class="case-modal-media-stack" id="caseModalMediaStack">
-        <!-- populated by JS: image/image/video blocks, in order -->
+        <div class="case-modal-media-stack" id="caseModalMediaStack">
+          <!-- populated by JS: image/image/video blocks, in order -->
+        </div>
       </div>
     </div>
   </div>
+ 
+  <!-- ═══════════════════════════════════════
+       IMAGE DETAIL PANEL — used by the 4 image-only
+       projects. Slides up from the bottom to ~88% of
+       viewport height, small gap left at the top.
+       Content: image + small caption, from IMAGE_PROJECTS.
+  ═══════════════════════════════════════ -->
+  <div class="image-panel" id="imagePanel">
+    <div
+      class="image-panel-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project image detail"
+    >
+      <button class="image-panel-close" type="button" aria-label="Close" data-image-panel-close>×</button>
+ 
+      <div class="image-panel-media">
+        <img id="imagePanelImg" src="" alt="">
+      </div>
+ 
+      <div class="image-panel-caption" id="imagePanelCaption"></div>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════
+       PDF PANEL — used by the wide "PDF" project card.
+       Same slide-up-from-bottom + fade-in pattern as the
+       other two panels; content is an embedded PDF instead
+       of image/video. Src comes from PDF_PROJECTS in the script.
+  ═══════════════════════════════════════ -->
+  <div class="pdf-panel" id="pdfPanel">
+    <div
+      class="pdf-panel-sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project process document"
+    >
+      <button class="pdf-panel-close" type="button" aria-label="Close" data-pdf-panel-close>×</button>
+      <iframe class="pdf-panel-frame" id="pdfPanelFrame" title="Project process document" hidden></iframe>
+      <div class="pdf-panel-empty" id="pdfPanelEmpty">PDF preview will appear here — add a real file path in PDF_PROJECTS.</div>
+    </div>
+  </div>
 
-
+<!-- <third grid section> -->
   
+   <div class="works-footer">
+    <a href="./contact.html" class="works-cta-btn">Get in touch</a>
+  </div>
+
+<footer class="footer">
+    <hr class="divider">
+    <div class="footer-bottom">
+      <div class="socials">
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/designwithmawuli/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <!-- <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a> -->
+        <a href="#" target="_blank" rel="noopener noreferrer">Tiktok</a>
+      </div>
+      <div class="copyright">@Copyright 2026</div>
+       <a href="mailto:Mawulyenoch@gmail.com" class="footer-email">Mawulyenoch@gmail.com</a>
+    </div>
+  </footer>
+
+
 <script src="./main2.js"></script>
 </body>
 </html>

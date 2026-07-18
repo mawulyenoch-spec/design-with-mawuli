@@ -88,8 +88,6 @@ ul {
 
 /* <burger menu> */
 
-
-
 .burger-btn {
   display: none;
   align-items: center;
@@ -195,11 +193,55 @@ ul {
 
 body.menu-open { overflow: hidden; }
 
+/* Full-screen dark background cover */
+/* ═══════════════════════════════════════
+   PAGE LOADER
+═══════════════════════════════════════ */
+/* Full-screen dark background cover */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Match this to your design/video background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Keeps loader on top of everything else */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth fade-out */
+}
+
+/* Size and scaling for your WebM loader */
+#loader-video {
+  width: 300px; /* Adjust size based on your animation design */
+  height: auto;
+  pointer-events: none; /* Prevents users from clicking or dragging the video */
+}
+
+/* Smooth fade class added by JavaScript */
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* 1. Freeze and hide text/images while the loader overlay is open */
+body:not(.start-page-animation) .hero-content .word,
+body:not(.start-page-animation) .hero-img {
+  animation: none !important;
+  opacity: 0 !important;
+}
+/* Freeze and hide text AND all 3 hero images while the loader overlay is open */
+body:not(.start-page-animation) .object-cube img,
+body:not(.start-page-animation) .object-worm img,
+body:not(.start-page-animation) .hero-character img {
+  animation: none !important;
+  opacity: 0 !important;
+  transform: none !important; /* Prevents any 3D hover/transform glitche layout changes before loading */
+}
 
 /* <burger menu> */
- 
-  
-/* <burger menu> */
+
 
 /* ═══════════════════════════════════════════════════════════
    NAVBAR
@@ -2749,6 +2791,9 @@ height: 150%;
   top: 10px;
  min-width: 30px;
 min-height: 30px;
+}
+.circle-arrow-btn:hover {
+   transform: scale(1.2);
 }
 
   .site-footer {

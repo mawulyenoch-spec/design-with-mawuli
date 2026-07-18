@@ -89,7 +89,16 @@ ul {
   list-style: none;
 }
 
+
   
+
+
+
+
+
+
+
+
   .hero,
   .name-section,
   .footer  {
@@ -440,18 +449,27 @@ body.menu-open { overflow: hidden; }
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    line-height: 2em;
+    line-height: 1em;
    width: 100%;
    border: #6fdc1a 2px solid ;
    padding: 50px;
    text-align: center;
+  
+  }
+ .notes-card h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
   }
 
   .notes-card span {
     font-size: 16px;
     letter-spacing: 2px;
     color: #fff;
-    opacity: 0.85;
+    /* opacity: 0.85; */
+    font-family: 'gotham-book', sans-serif;
+   font-size: 30px;
+   line-height: 1.5em;
   }
 
   .portrait {

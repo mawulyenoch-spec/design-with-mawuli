@@ -602,8 +602,8 @@ if (worksGrid) {
   // ─────────────────────────────────────
   const PROJECTS = {
     'proj-03': {
-      title: 'Product Teaser — Motion Reel',
-      tag: 'Motion Graphics',
+      title: 'FC26  CUSTOM PLAYER MODEL',
+      tag: 'JABEY',
       deepLink: true,
       media: [
         { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
@@ -639,7 +639,7 @@ if (worksGrid) {
         media: [
           { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
           { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: '', poster: PLACEHOLDER_IMG }
+          { type: 'video', src: './Videos/LEVERAGING_VISUAL_STORYTELLING_TECHNIQUES_FOR_ARCHITECTURAL_VISU.mp4', poster: PLACEHOLDER_IMG }
         ]
       },
       'proj-14': {
@@ -649,7 +649,7 @@ if (worksGrid) {
         media: [
           { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
           { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: '', poster: PLACEHOLDER_IMG }
+          { type: 'video', src: './Videos/video3.mp4', poster: PLACEHOLDER_IMG }
         ]
       },
       'proj-16': {
@@ -659,15 +659,26 @@ if (worksGrid) {
         media: [
           { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
           { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: '', poster: PLACEHOLDER_IMG }
+          { type: 'video', src: './Videos/video1.mp4', poster: PLACEHOLDER_IMG }
+        ]
+      },
+       'proj-18': {
+        title: 'FC26  CUSTOM PLAYER MODEL',
+        tag: 'NATHANIEL',
+        deepLink: false,
+        media: [
+          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
+          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
+          { type: 'video', src: './Videos/Download (2).mp4', poster: PLACEHOLDER_IMG },
+           { type: 'video', src: './Videos/Download (11).mp4', poster: PLACEHOLDER_IMG }
         ]
       },
       'proj-17': {
-        title: 'TODO: motion reel title',
+        title: 'Motion Reel ',
         tag: 'Motion Reel',
         deepLink: false,
         media: [
-          { type: 'video', src: '', poster: PLACEHOLDER_IMG }
+          { type: 'video', src: './videos/myReel.mp4', poster: PLACEHOLDER_IMG }
         ]
       }
   };

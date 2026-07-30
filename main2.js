@@ -606,9 +606,11 @@ if (worksGrid) {
       tag: 'JABEY',
       deepLink: true,
       media: [
-        { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
-        { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-        { type: 'video', src: '', poster: PLACEHOLDER_IMG }
+        { type: 'image', src: './images/jb2.png', alt: 'Process image 1 — TODO: describe' },
+        { type: 'image', src:  './images/jbb.png', alt: 'Process image 2 — TODO: describe' },
+        { type: 'image', src:  './images/jb4.jpg', alt: 'Process image 3 — TODO: describe' },
+        { type: 'image', src:  './images/jb3.png', alt: 'Process image 4 — TODO: describe' },
+        { type: 'video', src: './videos/jabey1.mp4', poster: PLACEHOLDER_IMG }
         // <source> left empty above — add the real video path when ready
       ]
     },
@@ -617,29 +619,41 @@ if (worksGrid) {
       tag: 'Motion Graphics',
       deepLink: false,
       media: [
-        { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
-        { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-        { type: 'video', src: '', poster: PLACEHOLDER_IMG }
+        // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
+        // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
+        { type: 'video', src: './Videos/investors.mp4', poster: './Images/vmemtum.png'}
       ]
     },
     'proj-08': {
-        title: 'TODO: project title',
-        tag: 'Motion Graphics',
+        title: 'Nhyira City Estate',
+        tag: 'Architectural Visualisation',
         deepLink: false,
         media: [
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: './videos/nhyira-city-estate1.mp4', poster: PLACEHOLDER_IMG }
+          { type: 'image', src: './Images/estate04.jpg', alt: 'Process image 1 — TODO: describe' },
+          { type: 'image', src: './Images/estate05.jpg', alt: 'Process image 2 — TODO: describe' },
+          { type: 'image', src: './Images/estate1.png', alt: 'Process image 3 — TODO: describe' },
+          { type: 'image', src: './Images/estate03.jpg', alt: 'Process image 4 — TODO: describe' },
+          { type: 'image', src: './Images/estate02.jpg', alt: 'Process image 5 — TODO: describe' },
+          { type: 'image', src: './Images/night2.png', alt: 'Process image 6 — TODO: describe' },
+          { type: 'image', src: './Images/night.png', alt: 'Process image 7 — TODO: describe' },
+          { type: 'image', src: './Images/night3.png', alt: 'Process image  — TODO: describe' },
+          { type: 'image', src: './Images/night1.png', alt: 'Process image  — TODO: describe' },
+          { type: 'video', src: './videos/nhyira-city-estate1.mp4', poster: './Images/066.png' }
         ]
       },
       'proj-10': {
-        title: 'TODO: project title',
-        tag: 'Motion Graphics',
+        title: 'Architectural Visualisation',
+        tag: 'THE EYE OF KNUST',
         deepLink: false,
         media: [
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: './Videos/LEVERAGING_VISUAL_STORYTELLING_TECHNIQUES_FOR_ARCHITECTURAL_VISU.mp4', poster: PLACEHOLDER_IMG }
+          
+          { type: 'image', src: './Images/DJI02.jpg', alt: 'Process image 1 — TODO: describe' },
+          { type: 'image', src: './Images/dji04.png', alt: 'Process image 2 — TODO: describe' },
+          { type: 'image', src: './Images/dji05.png', alt: 'Process image 3 — TODO: describe' },
+           { type: 'image', src: './Images/dji09.png', alt: 'Process image 4 — TODO: describe' },
+            { type: 'image', src: './Images/dji08.png', alt: 'Process image 5 — TODO: describe' },
+            { type: 'image', src: './Images/cabe.png', alt: 'Process image 6 — TODO: describe' },
+          { type: 'video', src: './Videos/LEVERAGING_VISUAL_STORYTELLING_TECHNIQUES_FOR_ARCHITECTURAL_VISU.mp4', poster: './Images/cabe 02.png' }
         ]
       },
       'proj-14': {
@@ -667,10 +681,23 @@ if (worksGrid) {
         tag: 'NATHANIEL',
         deepLink: false,
         media: [
+          { type: 'image', src: './images/102.png', alt: 'Process image 1 — TODO: describe' },
+          { type: 'image', src: './images/104.png', alt: 'Process image 2 — TODO: describe' },
+          { type: 'image', src: './images/099.png', alt: 'Process image 3 — TODO: describe' },
+          { type: 'image', src: './images/100.png', alt: 'Process image 4 — TODO: describe' },
+           { type: 'image', src: './images/103.png', alt: 'Process image 5 — TODO: describe' },
+          { type: 'video', src: './Videos/Download (2).mp4', poster: PLACEHOLDER_IMG },
+           { type: 'video', src: './Videos/Download (11).mp4', poster: PLACEHOLDER_IMG ,}
+        ]
+      },
+       'proj-19': {
+        title: 'PERSONAL PROJECT',
+        tag: 'Architectural Visualisation ',
+        deepLink: false,
+        media: [
           { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
           { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: './Videos/Download (2).mp4', poster: PLACEHOLDER_IMG },
-           { type: 'video', src: './Videos/Download (11).mp4', poster: PLACEHOLDER_IMG }
+          { type: 'video', src: './Videos/building03.mp4', poster: './Images/building03.png' }
         ]
       },
       'proj-17': {
@@ -833,10 +860,10 @@ if (worksGrid) {
   const IMAGE_PROJECTS = {
     'proj-01': { image: './Images/011.png', caption: 'The flyer emphasizes the value of customer experience, showing that 61% of customers are willing to pay at least 5% more when assured of outstanding service.' },
     'proj-02': { image: './images/044.png', caption: ' "This campaign uplifts young girls by ensuring access to essential hygiene, fostering dignity and confidence." \n "Every donation brings hope and empowers the girl child to thrive without barriers."' },
-    'proj-04': { image: './Images/033.png', caption: 'TODO: add a short caption for this project' },
-    'proj-05': { image: './Images/022.png', caption: 'TODO: add a short caption for this project' },
-    'proj-07': { image: PLACEHOLDER_IMG, caption: 'TODO: add a short caption for this project' },
-    'proj-09': { image: PLACEHOLDER_IMG, caption: 'TODO: add a short caption for this project' },
+    'proj-04': { image: './Images/033.png', caption: '' },
+    'proj-05': { image: './Images/022.png', caption: '' },
+    'proj-07': { image: './Images/055.jpg', caption: '' },
+    'proj-09': { image: './Images/Desktop13.png', caption: '© Code by Dogbey Mawuli Enoch ' },
     'proj-12': { image: PLACEHOLDER_IMG, caption: 'TODO: add a short caption for this project' },
     'proj-15': { image: PLACEHOLDER_IMG, caption: 'TODO: add a short caption for this project' }
   };

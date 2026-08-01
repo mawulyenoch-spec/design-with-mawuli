@@ -147,7 +147,7 @@ if (track && dotsEl) {
 
   function goTo(idx) {
     const gap = getGap();
-    
+
 function getGap() {
   return parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
 
@@ -663,10 +663,10 @@ if (worksGrid) {
       tag: 'JABEY',
       deepLink: true,
       media: [
-        { type: 'image', src: './images/jb2.png', alt: 'Process image 1 — TODO: describe' },
-        { type: 'image', src:  './images/jbb.png', alt: 'Process image 2 — TODO: describe' },
-        { type: 'image', src:  './images/jb4.jpg', alt: 'Process image 3 — TODO: describe' },
-        { type: 'image', src:  './images/jb3.png', alt: 'Process image 4 — TODO: describe' },
+        { type: 'image', src: './images/jb2.png', alt: 'Process image 1 ' },
+        { type: 'image', src:  './images/jbb.png', alt: 'Process image 2 ' },
+        { type: 'image', src:  './images/jb4.jpg', alt: 'Process image 3 ' },
+        { type: 'image', src:  './images/jb3.png', alt: 'Process image 4' },
         { type: 'video', src: './videos/jabey1.mp4', poster: PLACEHOLDER_IMG }
         // <source> left empty above — add the real video path when ready
       ]
@@ -678,7 +678,7 @@ if (worksGrid) {
       media: [
         // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
         // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-        { type: 'video', src: './Videos/investors.mp4', poster: './Images/vmemtum.png'}
+        { type: 'video', src: './videos/investors.mp4', poster: './Images/vmemtum.png'}
       ]
     },
     'proj-08': {
@@ -686,15 +686,15 @@ if (worksGrid) {
         tag: 'Architectural Visualisation',
         deepLink: false,
         media: [
-          { type: 'image', src: './Images/estate04.jpg', alt: 'Process image 1 — TODO: describe' },
-          { type: 'image', src: './Images/estate05.jpg', alt: 'Process image 2 — TODO: describe' },
-          { type: 'image', src: './Images/estate1.png', alt: 'Process image 3 — TODO: describe' },
-          { type: 'image', src: './Images/estate03.jpg', alt: 'Process image 4 — TODO: describe' },
-          { type: 'image', src: './Images/estate02.jpg', alt: 'Process image 5 — TODO: describe' },
-          { type: 'image', src: './Images/night2.png', alt: 'Process image 6 — TODO: describe' },
-          { type: 'image', src: './Images/night.png', alt: 'Process image 7 — TODO: describe' },
-          { type: 'image', src: './Images/night3.png', alt: 'Process image  — TODO: describe' },
-          { type: 'image', src: './Images/night1.png', alt: 'Process image  — TODO: describe' },
+          { type: 'image', src: './Images/estate04.jpg', alt: 'Process image 1  ' },
+          { type: 'image', src: './Images/estate05.jpg', alt: 'Process image 2 ' },
+          { type: 'image', src: './Images/estate1.png', alt: 'Process image 3 ' },
+          { type: 'image', src: './Images/estate03.jpg', alt: 'Process image 4 ' },
+          { type: 'image', src: './Images/estate02.jpg', alt: 'Process image 5 ' },
+          { type: 'image', src: './Images/night2.png', alt: 'Process image 6 ' },
+          { type: 'image', src: './Images/night.png', alt: 'Process image 7 ' },
+          { type: 'image', src: './Images/night3.png', alt: 'Process image 8 ' },
+          { type: 'image', src: './Images/night1.png', alt: 'Process image 9 ' },
           { type: 'video', src: './videos/nhyira-city-estate1.mp4', poster: './Images/066.png' }
         ]
       },
@@ -710,7 +710,7 @@ if (worksGrid) {
            { type: 'image', src: './Images/dji09.png', alt: 'Process image 4 — TODO: describe' },
             { type: 'image', src: './Images/dji08.png', alt: 'Process image 5 — TODO: describe' },
             { type: 'image', src: './Images/cabe.png', alt: 'Process image 6 — TODO: describe' },
-          { type: 'video', src: './Videos/LEVERAGING_VISUAL_STORYTELLING_TECHNIQUES_FOR_ARCHITECTURAL_VISU.mp4', poster: './Images/cabe 02.png' }
+          { type: 'video', src: './videos/LEVERAGING_VISUAL_STORYTELLING_TECHNIQUES_FOR_ARCHITECTURAL_VISU.mp4', poster: './Images/cabe 02.png' }
         ]
       },
       'proj-14': {
@@ -720,7 +720,7 @@ if (worksGrid) {
         media: [
           // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
           // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: './Videos/video3.mp4', poster: './Images/shot-2.png' }
+          { type: 'video', src: './videos/video3.mp4', poster: './Images/shot-2.png' }
         ]
       },
       'proj-16': {
@@ -730,7 +730,7 @@ if (worksGrid) {
         media: [
           // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
           // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: './Videos/video1.mp4', poster: './Images/shot-1.png'}
+          { type: 'video', src: './videos/video1.mp4', poster: './Images/shot-1.png'}
         ]
       },
        'proj-18': {
@@ -738,13 +738,13 @@ if (worksGrid) {
         tag: 'NATHANIEL',
         deepLink: false,
         media: [
-          { type: 'image', src: './images/102.png', alt: 'Process image 1 — TODO: describe' },
-          { type: 'image', src: './images/104.png', alt: 'Process image 2 — TODO: describe' },
-          { type: 'image', src: './images/099.png', alt: 'Process image 3 — TODO: describe' },
-          { type: 'image', src: './images/100.png', alt: 'Process image 4 — TODO: describe' },
-           { type: 'image', src: './images/103.png', alt: 'Process image 5 — TODO: describe' },
-          { type: 'video', src: './Videos/Download (2).mp4', poster: PLACEHOLDER_IMG },
-           { type: 'video', src: './Videos/Download (11).mp4', poster: PLACEHOLDER_IMG ,}
+          { type: 'image', src: './images/102.png',  },
+          { type: 'image', src: './images/104.png',  },
+          { type: 'image', src: './images/099.png',  },
+          { type: 'image', src: './images/100.png',  },
+           { type: 'image', src: './images/103.png', },
+          { type: 'video', src: './videos/Download (2).mp4', poster: PLACEHOLDER_IMG },
+           { type: 'video', src: './videos/Download (11).mp4', poster: PLACEHOLDER_IMG ,}
         ]
       },
        'proj-19': {
@@ -754,7 +754,7 @@ if (worksGrid) {
         media: [
           // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
           // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: './Videos/building03.mp4', poster: './Images/building03.png' }
+          { type: 'video', src: './videos/building03.mp4', poster: './Images/building03.png' }
         ]
       },
       'proj-17': {

@@ -84,419 +84,163 @@
     </div>
   </section>
    
+       <!-- PROJECT GRID — , all cards -->
 
-<!-- ═══════════════════════════════════════
-       PROJECT GRID — first section, all cards
-       sit under "All" for now (data-category="all").
-       Section title/index ("Social media designs / 01")
-       intentionally left out per your instruction —
-       add that markup whenever you're ready for it.
-  ═══════════════════════════════════════ -->
-  <section class="works-grid reveal-line" data-category-group="all">
-    <div class="works-grid-inner">
-      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-01">
-        <img class="project-thumb" src="./Images/011.png"alt="TODO: describe this project">
-      </button>
- 
-      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-02">
-        <img class="project-thumb" src="./Images/044.png" alt="TODO: describe this project">
-      </button>
- 
-      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-03">
-        <video class="project-thumb" poster="./Images/077.png">
-          <source src="'./videos/jabey1.mp4" type="video/mp4">
-        </video>
-        <span class="play-btn" aria-hidden="true">
-          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-      </button>
+  <section class="works-grid" data-category-group="all">
+  <div class="works-grid-inner ">
 
-      <button type="button" class="project-card " data-type="image" data-category="all" data-project-id="proj-04">
-        <img class="project-thumb" src="./Images/033.png">
-      </button>
+ <button type="button" class="project-card reveal-card" data-type="image" data-category="design" data-project-id="proj-01">
+      <img class="project-thumb " src="./Images/011.png" alt="TODO: describe this project">
+    </button> 
  
-      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-05">
-        <img class="project-thumb" src="./Images/022.png">
-      </button>
- 
-      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-06">
-        <video class="project-thumb" poster="./Images/vmemtum.png" muted loop playsinline>
-          <source src="./Videos/investors.mp4" type="video/mp4">
-        </video>
-        <span class="play-btn" aria-hidden="true">
-          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-      </button>
- 
-    </div>
-  </section>
- 
-  <!-- ═══════════════════════════════════════
-       CASE-STUDY MODAL — used by the video projects.
-       Slide-up-from-bottom + fade-in, same pattern as
-       the image detail panel below. Content comes from
-       the PROJECTS object in works.js, keyed by data-project-id.
-  ═══════════════════════════════════════ -->
-  <div class="case-modal" id="caseModal">
-    <div
-      class="case-modal-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="caseModalTitle"
-    >
-      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>×</button>
- 
-      <div class="case-modal-inner">
-        <div class="case-modal-header">
-          <h2 class="case-modal-title" id="caseModalTitle"></h2>
-          <span class="case-modal-tag" id="caseModalTag"></span>
-        </div>
- 
-        <div class="case-modal-media-stack" id="caseModalMediaStack">
-          <!-- populated by JS: image/image/video blocks, in order -->
-        </div>
+    <button type="button" class="project-card reveal-card" data-type="image" data-category="design" data-project-id="proj-02">
+      <img class="project-thumb " src="./Images/044.png" alt="TODO: describe this project">
+    </button>
+
+<button type="button" class="project-card reveal-card" data-type="video" data-category="animation" data-project-id="proj-03">
+      <video class="project-thumb" poster="./Images/077.png">
+        <source src="./videos/jabey1.mp4" type="video/mp4">
+      </video>
+      <span class="play-btn" aria-hidden="true">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </button>
+
+    <button type="button" class="project-card reveal-card" data-type="image" data-category="design" data-project-id="proj-04">
+      <img class="project-thumb" src="./Images/033.png" alt="TODO: describe this project">
+    </button>
+
+
+  <button type="button" class="project-card reveal-card" data-type="image" data-category="design" data-project-id="proj-05">
+      <img class="project-thumb" src="./Images/022.png" alt="TODO: describe this project">
+    </button>
+
+    
+    <button type="button" class="project-card reveal-card" data-type="video" data-category="animation" data-project-id="proj-06">
+      <video class="project-thumb" poster="./Images/vmemtum.png" muted loop playsinline>
+        <source src="./Videos/investors.mp4" type="video/mp4">
+      </video>
+      <span class="play-btn" aria-hidden="true">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </button>
+
+    <button type="button" class="project-card reveal-card" data-type="image" data-category="design" data-project-id="proj-07">
+      <img class="project-thumb" src="./Images/055.jpg" alt="TODO: describe this project">
+    </button>
+
+    <button type="button" class="project-card reveal-card" data-type="video" data-category="animation" data-project-id="proj-08">
+      <video class="project-thumb" poster="./Images/066.png" muted loop playsinline>
+        <source src="./videos/nhyira-city-estate1.mp4" type="video/mp4">
+      </video>
+      <span class="play-btn" aria-hidden="true">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </button>
+
+    <button type="button" class="project-card reveal-card" data-type="image" data-category="development" data-project-id="proj-09">
+      <img class="project-thumb" src="./Images/coverpage.png" alt="TODO: describe this project">
+    </button>
+
+    <button type="button" class="project-card reveal-card" data-type="video" data-category="animation" data-project-id="proj-10">
+      <video class="project-thumb" poster="./Images/cabe 02.png" muted loop playsinline>
+        <source src="./Videos/LEVERAGING_VISUAL_STORYTELLING_TECHNIQUES_FOR_ARCHITECTURAL_VISU.mp4" type="video/mp4">
+      </video>
+      <span class="play-btn" aria-hidden="true">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </button>
+
+    <!-- Wide PDF card -->
+    <button type="button" class="project-card project-card--wide reveal-card" data-type="pdf" data-category="design" data-project-id="proj-11">
+      <img class="project-thumb" src="./Images/SOCIAL logo.png" alt="TODO: describe this project">
+    </button>
+
+    <!-- Full-width video card -->
+    <button type="button" class="project-card project-card--full reveal-card" data-type="video" data-category="animation" data-project-id="proj-17">
+      <video class="project-thumb" poster="./Images/reelwallpaper01.png" muted loop playsinline>
+        <source src="./videos/myReel.mp4" type="video/mp4">
+      </video>
+      <span class="play-btn" aria-hidden="true">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </button>
+
+    <!-- Wide PDF card -->
+    <button type="button" class="project-card project-card--wide reveal-card" data-type="pdf" data-category="design" data-project-id="proj-13">
+      <img class="project-thumb" src="./Images/hair.png" alt="TODO: describe this project">
+    </button>
+
+    <button type="button" class="project-card reveal-card" data-type="video" data-category="animation" data-project-id="proj-18">
+      <video class="project-thumb" poster="./Images/088.png" muted loop playsinline>
+        <source src="./Videos/Download (2).mp4" type="video/mp4">
+      </video>
+      <span class="play-btn" aria-hidden="true">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </button>
+
+    <button type="button" class="project-card reveal-card" data-type="video" data-category="animation" data-project-id="proj-16">
+      <video class="project-thumb" poster="./Images/shot-1.png" muted loop playsinline>
+        <source src="./Videos/video1.mp4" type="video/mp4">
+      </video>
+      <span class="play-btn" aria-hidden="true">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </button>
+
+    <button type="button" class="project-card reveal-card" data-type="video" data-category="animation" data-project-id="proj-19">
+      <video class="project-thumb" poster="./Images/building030.png" muted loop playsinline>
+        <source src="./Videos/building03.mp4" type="video/mp4">
+      </video>
+      <span class="play-btn" aria-hidden="true">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </button>
+
+    <button type="button" class="project-card reveal-card" data-type="video" data-category="animation" data-project-id="proj-14">
+      <video class="project-thumb" poster="./Images/shot-2.png" muted loop playsinline>
+        <source src="./Videos/video3.mp4" type="video/mp4">
+      </video>
+      <span class="play-btn" aria-hidden="true">
+        <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </button>
+
+  </div>
+</section>
+
+<!-- Only ONE copy of each of these three needed for the whole page -->
+<div class="case-modal" id="caseModal">
+  <div class="case-modal-sheet" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+    <div class="case-modal-inner">
+      <div class="case-modal-header">
+        <h2 class="case-modal-title" id="caseModalTitle"></h2>
+        <span class="case-modal-tag" id="caseModalTag"></span>
       </div>
+      <div class="case-modal-media-stack" id="caseModalMediaStack"></div>
     </div>
   </div>
- 
-  <!-- ═══════════════════════════════════════
-       IMAGE DETAIL PANEL — used by the 4 image-only
-       projects. Slides up from the bottom to ~88% of
-       viewport height, small gap left at the top.
-       Content: image + small caption, from IMAGE_PROJECTS in works.js.
-  ═══════════════════════════════════════ -->
-  <div class="image-panel" id="imagePanel">
-    <div
-      class="image-panel-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Project image detail"
-    >
-      <button class="image-panel-close" type="button" aria-label="Close" data-image-panel-close>×</button>
- 
-      <div class="image-panel-media">
-        <img id="imagePanelImg" src="" alt="">
-      </div>
- 
-      <div class="image-panel-caption" id="imagePanelCaption"></div>
+   <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>×</button>
+</div>
+
+<div class="image-panel" id="imagePanel">
+  <div class="image-panel-sheet" role="dialog" aria-modal="true" aria-label="Project image detail">
+    <button class="image-panel-close" type="button" aria-label="Close" data-image-panel-close>×</button>
+    <div class="image-panel-media">
+      <img id="imagePanelImg" src="" alt="">
     </div>
+    <div class="image-panel-caption" id="imagePanelCaption"></div>
   </div>
+</div>
 
-  <!-- <second grid section> -->
-
-<!-- ═══════════════════════════════════════
-       PROJECT GRID — . Mixed layout:
-       row 1 is 3 standard cards, row 2 has 1 standard
-       card + 1 wide card (spans 2 columns) that opens
-       a PDF instead of the usual image/video panel.
-  ═══════════════════════════════════════ -->
-  <section class="works-grid reveal-line" data-category-group="all">
-    <div class="works-grid-inner">
- 
-      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-07">
-        <img class="project-thumb" src="./Images/055.jpg" TODO: describe this project">
-      </button>
- 
-      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-08">
-        <video class="project-thumb" poster="./Images/066.png" muted loop playsinline>
-          <source src="./videos/nhyira-city-estate1.mp4" type="video/mp4">
-        </video>
-        <span class="play-btn" aria-hidden="true">
-          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-      </button>
- 
-      <button type="button" class="project-card" data-type="image" data-category="all" data-project-id="proj-09">
-        <img class="project-thumb" src="./Images/coverpage.png " alt="TODO: describe this project">
-      </button>
- 
-      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-10">
-        <video class="project-thumb" poster="./Images/cabe 02.png" muted loop playsinline>
-          <source src="./Videos/LEVERAGING_VISUAL_STORYTELLING_TECHNIQUES_FOR_ARCHITECTURAL_VISU.mp4" type="video/mp4">
-        </video>
-        <span class="play-btn" aria-hidden="true">
-          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-      </button>
- 
-      <!-- Wide PDF card — thumbnail is just a cover image, click opens the PDF panel -->
-      <button type="button" class="project-card project-card--wide" data-type="pdf" data-category="all" data-project-id="proj-11">
-        <img class="project-thumb " src="./Images/SOCIAL logo.png">
-      </button>
-    </div>
-  </section>
- 
-<!-- ═══════════════════════════════════════
-       PROJECT GRID — section 5. Single full-width
-       video card for the motion reel, spanning the
-       entire grid width via .project-card--full.
-  ═══════════════════════════════════════ -->
-  <section class="works-grid reveal-line" data-category-group="all">
-    <div class="works-grid-inner">
- 
-      <button type="button" class="project-card project-card--full" data-type="video" data-category="all" data-project-id="proj-17">
-        <video class="project-thumb" poster="./Images/reelwallpaper01.png" muted loop playsinline>
-          <source src="./videos/myReel.mp4" type="video/mp4">
-        </video>
-        <span class="play-btn" aria-hidden="true">
-          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-      </button>
- 
-    </div>
-  </section>
- 
-  <!-- ═══════════════════════════════════════
-       CASE-STUDY MODAL — used by the video projects.
-       Same slide-up-from-bottom + fade-in pattern as
-       the image detail panel, for a consistent feel
-       across the whole grid. Content comes from the
-       PROJECTS object below, keyed by data-project-id.
-  ═══════════════════════════════════════ -->
-  <div class="case-modal" id="caseModal">
-    <div
-      class="case-modal-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="caseModalTitle"
-    >
-      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>×</button>
- 
-      <div class="case-modal-inner">
-        <div class="case-modal-header">
-          <h2 class="case-modal-title" id="caseModalTitle"></h2>
-          <span class="case-modal-tag" id="caseModalTag"></span>
-        </div>
- 
-        <div class="case-modal-media-stack" id="caseModalMediaStack">
-          <!-- populated by JS: image/image/video blocks, in order -->
-        </div>
-      </div>
-    </div>
+<div class="pdf-panel" id="pdfPanel">
+  <div class="pdf-panel-sheet" role="dialog" aria-modal="true" aria-label="Project process document">
+    <button class="pdf-panel-close" type="button" aria-label="Close" data-pdf-panel-close>×</button>
+    <iframe class="pdf-panel-frame" id="pdfPanelFrame" title="Project process document" hidden></iframe>
+    <div class="pdf-panel-empty" id="pdfPanelEmpty">PDF preview will appear here — add a real file path in PDF_PROJECTS.</div>
   </div>
- 
-  <!-- ═══════════════════════════════════════
-       IMAGE DETAIL PANEL — used by the 4 image-only
-       projects. Slides up from the bottom to ~88% of
-       viewport height, small gap left at the top.
-       Content: image + small caption, from IMAGE_PROJECTS.
-  ═══════════════════════════════════════ -->
-  <div class="image-panel" id="imagePanel">
-    <div
-      class="image-panel-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Project image detail"
-    >
-      <button class="image-panel-close" type="button" aria-label="Close" data-image-panel-close>×</button>
- 
-      <div class="image-panel-media">
-        <img id="imagePanelImg" src="" alt="">
-      </div>
- 
-      <div class="image-panel-caption" id="imagePanelCaption"></div>
-    </div>
-  </div>
-
-
-  <!-- ═══════════════════════════════════════
-       CASE-STUDY MODAL — used by the video projects.
-       Same slide-up-from-bottom + fade-in pattern as
-       the image detail panel, for a consistent feel
-       across the whole grid. Content comes from the
-       PROJECTS object below, keyed by data-project-id.
-  ═══════════════════════════════════════ -->
-  <div class="case-modal" id="caseModal">
-    <div
-      class="case-modal-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="caseModalTitle"
-    >
-      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>×</button>
- 
-      <div class="case-modal-inner">
-        <div class="case-modal-header">
-          <h2 class="case-modal-title" id="caseModalTitle"></h2>
-          <span class="case-modal-tag" id="caseModalTag"></span>
-        </div>
- 
-        <div class="case-modal-media-stack" id="caseModalMediaStack">
-          <!-- populated by JS: image/image/video blocks, in order -->
-        </div>
-      </div>
-    </div>
-  </div>
- 
-  <!-- ═══════════════════════════════════════
-       IMAGE DETAIL PANEL — used by the 4 image-only
-       projects. Slides up from the bottom to ~88% of
-       viewport height, small gap left at the top.
-       Content: image + small caption, from IMAGE_PROJECTS.
-  ═══════════════════════════════════════ -->
-  <div class="image-panel" id="imagePanel">
-    <div
-      class="image-panel-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Project image detail"
-    >
-      <button class="image-panel-close" type="button" aria-label="Close" data-image-panel-close>×</button>
- 
-      <div class="image-panel-media">
-        <img id="imagePanelImg" src="" alt="">
-      </div>
- 
-      <div class="image-panel-caption" id="imagePanelCaption"></div>
-    </div>
-  </div>
- 
-  <!-- ═══════════════════════════════════════
-       PDF PANEL — used by the wide "PDF" project card.
-       Same slide-up-from-bottom + fade-in pattern as the
-       other two panels; content is an embedded PDF instead
-       of image/video. Src comes from PDF_PROJECTS in the script.
-  ═══════════════════════════════════════ -->
-  <div class="pdf-panel" id="pdfPanel">
-    <div
-      class="pdf-panel-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Project process document"
-    >
-      <button class="pdf-panel-close" type="button" aria-label="Close" data-pdf-panel-close>×</button>
-      <iframe class="pdf-panel-frame" id="pdfPanelFrame" title="Project process document" hidden></iframe>
-      <div class="pdf-panel-empty" id="pdfPanelEmpty">PDF preview will appear here — add a real file path in PDF_PROJECTS.</div>
-    </div>
-  </div>
-
-    <!-- <second grid section> -->
-
-   <!-- <third grid section> -->
-
-<!-- ═══════════════════════════════════════
-       PROJECT GRID — section 4. Mirrors section 3's
-       mixed layout, just reordered: row 1 is a standard
-       card + the wide PDF card, row 2 is 3 standard cards.
-  ═══════════════════════════════════════ -->
-  <section class="works-grid reveal-line" data-category-group="all">
-    <div class="works-grid-inner">
- <!-- Wide PDF card — thumbnail is just a cover image, click opens the PDF panel -->
-      <button type="button" class="project-card project-card--wide" data-type="pdf" data-category="all" data-project-id="proj-13">
-        <img class="project-thumb" src="./Images/hair.png" alt="TODO: describe this project">
-      </button>
-
-
-     <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-18">
-        <video class="project-thumb" poster="./Images/088.png" muted loop playsinline>
-          <source src="./Videos/Download (2).mp4" type="video/mp4">
-        </video>
-        <span class="play-btn" aria-hidden="true">
-          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-      </button>
-
-      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-16">
-        <video class="project-thumb" poster="./Images/shot-1.png" muted loop playsinline>
-          <source src="./Videos/video1.mp4" type="video/mp4">
-        </video>
-        <span class="play-btn" aria-hidden="true">
-          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-      </button>
-
-      <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-19">
-        <video class="project-thumb" poster="./Images/building030.png" muted loop playsinline>
-          <source src="./Videos/building03.mp4" type="video/mp4">
-        </video>
-        <span class="play-btn" aria-hidden="true">
-          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-      </button>
-
-
-       <button type="button" class="project-card" data-type="video" data-category="all" data-project-id="proj-14">
-        <video class="project-thumb" poster="./Images/shot-2.png" muted loop playsinline>
-          <source src="./Videos/video3.mp4" type="video/mp4">
-        </video>
-        <span class="play-btn" aria-hidden="true">
-          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-      </button>
- 
-    </div>
-  </section>
- 
-  <!-- ═══════════════════════════════════════
-       CASE-STUDY MODAL — used by the video projects.
-       Same slide-up-from-bottom + fade-in pattern as
-       the image detail panel, for a consistent feel
-       across the whole grid. Content comes from the
-       PROJECTS object below, keyed by data-project-id.
-  ═══════════════════════════════════════ -->
-  <div class="case-modal" id="caseModal">
-    <div
-      class="case-modal-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="caseModalTitle"
-    >
-      <button class="case-modal-close" type="button" aria-label="Close project details" data-modal-close>×</button>
- 
-      <div class="case-modal-inner">
-        <div class="case-modal-header">
-          <h2 class="case-modal-title" id="caseModalTitle"></h2>
-          <span class="case-modal-tag" id="caseModalTag"></span>
-        </div>
- 
-        <div class="case-modal-media-stack" id="caseModalMediaStack">
-          <!-- populated by JS: image/image/video blocks, in order -->
-        </div>
-      </div>
-    </div>
-  </div>
- 
-  <!-- ═══════════════════════════════════════
-       IMAGE DETAIL PANEL — used by the 4 image-only
-       projects. Slides up from the bottom to ~88% of
-       viewport height, small gap left at the top.
-       Content: image + small caption, from IMAGE_PROJECTS.
-  ═══════════════════════════════════════ -->
-  <div class="image-panel" id="imagePanel">
-    <div
-      class="image-panel-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Project image detail"
-    >
-      <button class="image-panel-close" type="button" aria-label="Close" data-image-panel-close>×</button>
- 
-      <div class="image-panel-media">
-        <img id="imagePanelImg" src="" alt="">
-      </div>
- 
-      <div class="image-panel-caption" id="imagePanelCaption"></div>
-    </div>
-  </div>
- 
-  <!-- ═══════════════════════════════════════
-       PDF PANEL — used by the wide "PDF" project card.
-       Same slide-up-from-bottom + fade-in pattern as the
-       other two panels; content is an embedded PDF instead
-       of image/video. Src comes from PDF_PROJECTS in the script.
-  ═══════════════════════════════════════ -->
-  <div class="pdf-panel" id="pdfPanel">
-    <div
-      class="pdf-panel-sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Project process document"
-    >
-      <button class="pdf-panel-close" type="button" aria-label="Close" data-pdf-panel-close>×</button>
-      <iframe class="pdf-panel-frame" id="pdfPanelFrame" title="Project process document" hidden></iframe>
-      <div class="pdf-panel-empty" id="pdfPanelEmpty">PDF preview will appear here — add a real file path in PDF_PROJECTS.</div>
-    </div>
-  </div>
+</div>
 
 <!-- <third grid section> -->
   

@@ -107,6 +107,7 @@ if (heroContent) {
   });
 }
 
+/* <3 video cards> */
 
 /* <3 video cards> */
 const track = document.getElementById('track');
@@ -116,17 +117,23 @@ if (track && dotsEl) {
   const cards = Array.from(track.querySelectorAll('.card'));
   let current = 0;
 
+  function isMobile() {
+    return track.parentElement.offsetWidth <= 480;
+  }
+
   function getVisible() {
+    // only used above 480px now — mobile has its own path below
     const w = track.parentElement.offsetWidth;
-    if (w <= 440) return 1;
     if (w <= 700) return 1.2;
     return 3;
   }
 
   function buildDots() {
     dotsEl.innerHTML = '';
-    const vis = Math.round(getVisible());
-    const total = Math.max(1, cards.length - vis + 1);
+    const total = isMobile()
+      ? cards.length
+      : Math.max(1, cards.length - Math.round(getVisible()) + 1);
+
     for (let i = 0; i < total; i++) {
       const b = document.createElement('button');
       b.className = 'dot' + (i === current ? ' active' : '');
@@ -137,14 +144,33 @@ if (track && dotsEl) {
     }
   }
 
+
   function goTo(idx) {
-    const vis = Math.round(getVisible());
-    const max = Math.max(0, cards.length - vis);
-    current = Math.max(0, Math.min(idx, max));
-    const gap = 16;
-    const cardW = track.parentElement.offsetWidth;
-    const singleW = (cardW - gap * (Math.round(getVisible()) - 1)) / Math.round(getVisible());
-    track.style.transform = `translateX(-${current * (singleW + gap)}px)`;
+    const gap = getGap();
+    
+function getGap() {
+  return parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+
+}
+    if (isMobile()) {
+      // one dot = one card, measured directly from the real DOM width
+      current = Math.max(0, Math.min(idx, cards.length - 1));
+      const cardW = cards[0].getBoundingClientRect().width;
+      const viewportW = track.parentElement.offsetWidth;
+      const maxTranslate = Math.max(0, track.scrollWidth - viewportW);
+      let translate = current * (cardW + gap);
+      translate = Math.min(translate, maxTranslate); // never scroll past the last real card
+      track.style.transform = `translateX(-${translate}px)`;
+    } else {
+      // original sliding-window logic, unchanged, for tablet/desktop
+      const vis = Math.round(getVisible());
+      const max = Math.max(0, cards.length - vis);
+      current = Math.max(0, Math.min(idx, max));
+      const cardW = track.parentElement.offsetWidth;
+      const singleW = (cardW - gap * (vis - 1)) / vis;
+      track.style.transform = `translateX(-${current * (singleW + gap)}px)`;
+    }
+
     document.querySelectorAll('.dot').forEach((d, i) => {
       d.classList.toggle('active', i === current);
     });
@@ -160,9 +186,12 @@ if (track && dotsEl) {
     if (Math.abs(dx) > 40) { dx < 0 ? goTo(current + 1) : goTo(current - 1); }
   });
 
-  window.addEventListener('resize', () => { buildDots(); goTo(current); });
+  window.addEventListener('resize', () => {
+    current = 0; // reset — dot count differs between mobile/desktop modes, so an old index could point at nothing
+    buildDots();
+    goTo(0);
+  });
 }
-
 
 /* <new code for the 3 video cards — modal> */
 const videoModal = document.getElementById('videoModal');
@@ -320,6 +349,7 @@ if (wrap && video) {
     line.style.transitionDelay = `${index * 0.15}s`;
   });
 
+
   const lineObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -337,6 +367,33 @@ if (wrap && video) {
   );
 
   lines.forEach((line) => lineObserver.observe(line));
+})();
+
+(function () {
+  const cards = document.querySelectorAll('.reveal-card');
+  if (!cards.length) return;
+
+  cards.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 0.10}s`;
+  });
+
+  const cardObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: '0px 0px -20px 0px',
+      threshold: 0.1,
+    }
+  );
+
+  cards.forEach((card) => cardObserver.observe(card));
 })();
 
 
@@ -615,7 +672,7 @@ if (worksGrid) {
       ]
     },
     'proj-06': {
-      title: 'Behind-the-Scenes Edit',
+      title: 'VIDEOMEMTUM',
       tag: 'Motion Graphics',
       deepLink: false,
       media: [
@@ -657,23 +714,23 @@ if (worksGrid) {
         ]
       },
       'proj-14': {
-        title: 'TODO: project title',
+        title: 'AGENLY',
         tag: 'Motion Graphics',
         deepLink: false,
         media: [
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: './Videos/video3.mp4', poster: PLACEHOLDER_IMG }
+          // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
+          // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
+          { type: 'video', src: './Videos/video3.mp4', poster: './Images/shot-2.png' }
         ]
       },
       'proj-16': {
-        title: 'TODO: project title',
+        title: 'AGENLY',
         tag: 'Motion Graphics',
         deepLink: false,
         media: [
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
-          { type: 'video', src: './Videos/video1.mp4', poster: PLACEHOLDER_IMG }
+          // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
+          // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
+          { type: 'video', src: './Videos/video1.mp4', poster: './Images/shot-1.png'}
         ]
       },
        'proj-18': {
@@ -695,8 +752,8 @@ if (worksGrid) {
         tag: 'Architectural Visualisation ',
         deepLink: false,
         media: [
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
-          { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
+          // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 1 — TODO: describe' },
+          // { type: 'image', src: PLACEHOLDER_IMG, alt: 'Process image 2 — TODO: describe' },
           { type: 'video', src: './Videos/building03.mp4', poster: './Images/building03.png' }
         ]
       },
@@ -724,6 +781,14 @@ if (worksGrid) {
  
   let lastFocusedEl = null;
  
+  function pauseAllModalVideos() {
+  const videos = caseModalMediaStack.querySelectorAll('video');
+  videos.forEach(video => {
+    video.pause();
+    video.currentTime = 0;
+  });
+}
+
   function openCaseModal(projectId, triggerEl) {
     const data = PROJECTS[projectId];
     if (!caseModal || !data) return;
@@ -733,6 +798,7 @@ if (worksGrid) {
     caseModalTitle.textContent = data.title;
     caseModalTag.textContent = data.tag;
  
+    pauseAllModalVideos();
     caseModalMediaStack.innerHTML = '';
     data.media.forEach(item => {
       const block = document.createElement('div');
@@ -784,6 +850,8 @@ if (worksGrid) {
   function closeCaseModal() {
     if (!caseModal || !caseModal.classList.contains('is-open')) return;
  
+      pauseAllModalVideos();
+
     caseModal.classList.remove('is-open');
     document.body.classList.remove('modal-open');
     document.removeEventListener('keydown', handleCaseModalKeydown);
@@ -1078,33 +1146,32 @@ if (worksGrid) {
       }
     });
  
-    // Basic active-state toggle so you can click through the pills while reviewing.
-    // Filtering logic itself comes later once the project grid exists.
-    document.querySelectorAll('.filter-pill').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-pill').forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-pressed', 'false');
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-pressed', 'true');
-      });
-    });
+/* <new code added> */
 
-{/* <new code added> */}
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-pill');
+  const projectCards = document.querySelectorAll('.project-card');
 
-  // Basic active-state toggle so you can click through the pills while reviewing.
-  // Filtering logic itself comes later once the project grid exists.
-  document.querySelectorAll('.filter-pill').forEach(btn => {
+  filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-pill').forEach(b => {
+      // update active pill state
+      filterButtons.forEach(b => {
         b.classList.remove('active');
         b.setAttribute('aria-pressed', 'false');
       });
       btn.classList.add('active');
       btn.setAttribute('aria-pressed', 'true');
+
+      // filter the project cards
+      const filter = btn.dataset.filter;
+      projectCards.forEach(card => {
+        const categories = card.dataset.category.split(' ');
+        const show = filter === 'all' || categories.includes(filter);
+        card.style.display = show ? '' : 'none';
+      });
     });
   });
- 
+});
+
 } // end .works-grid null-guard
    

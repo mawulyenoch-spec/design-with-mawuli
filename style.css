@@ -807,29 +807,15 @@ margin: 0 auto;
     overflow: hidden;
     position: relative;
     width: 100%; 
-    height: 500px; 
-     /* margin: 0 auto; */
-   /* border: #a8610a 1px solid; */
-    /* background-color: blue; */
-   
+    height: auto;
   }
+
 .card img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* object-position: 20%; */
 }
-/* .card .shot-3{ 
-  width: 100%;
-  height: 400px;
-  object-position: -150px;
-}
-.card .shot-v{
-   width: 100%;
-  height:140%;
-  object-fit: cover;
- object-position: -350px;
-} */
+
   .cards-track {
     display: flex;
     justify-content: center;
@@ -851,6 +837,8 @@ margin: 0 auto;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
     background: #1a1a1a;
   }
+  
+
   .card:hover {
     transform: scale(1.04);
     box-shadow: 0 16px 40px rgba(0,0,0,0.2);
@@ -2457,7 +2445,7 @@ justify-self: center; */
 
 .card{
 /* border: salmon 2px solid; */
-width: 200px;
+width: 220px;
 height: 250px;
 }
 
@@ -2471,17 +2459,14 @@ width: 20px;
 }
 
  .carousel-viewport{
-/* height: 300px; */
-  /* border: #000 2px solid ; */
   display: flex;
   justify-content: center;
-  align-items: center; */
-   /* width: 500px; */
+  align-items: center; 
 
  }
  .cards-track{
   /* border: #06B9C6 2px solid ; */
-
+  gap: 20px;
  }
  /* <card viewport> */
 
@@ -2644,15 +2629,21 @@ gap: 20px;
     font-size: 15px;
     
       }
+
       .btn-about{
         /* background-color: #2adf06; */
   /* border: greenyellow 2px solid ; */
   width: 100px;
   height: 100px;
 }
+ .cards-track{
+padding: 0 5px;
 
+ }
    .card { flex: 1 1 auto ; }
    
+
+
    .card{
 /* border: salmon 2px solid; */
 width: 350px;
@@ -2669,11 +2660,9 @@ width: 20px;
 }
 
  .carousel-viewport{
-/* height: 300px; */
-  /* border: #000 2px solid ; */
   display: flex;
-  justify-content: center;
-  align-items: center; */
+  justify-content: flex-start;
+  align-items: center; 
  }
 
    .subject {
@@ -2912,6 +2901,9 @@ height: 100%;
 }
    .card { flex: 1 1 auto ; }
    
+    .cards-track{
+padding: 0 5px;
+ }
    .card{
 /* border: salmon 2px solid; */
 width: 310px;
@@ -2928,11 +2920,10 @@ width: 20px;
 }
 
  .carousel-viewport{
-/* height: 300px; */
   /* border: #000 2px solid ; */
   display: flex;
-  justify-content: center;
-  align-items: center; */
+  justify-content: flex-start;
+  align-items: center; 
  }
 
 .testimonials-heading{

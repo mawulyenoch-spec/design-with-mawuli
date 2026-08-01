@@ -667,7 +667,7 @@ if (worksGrid) {
         { type: 'image', src: './Images/jbb.png', alt: 'Process image 2 ' },
         { type: 'image', src: './Images/jb4.jpg', alt: 'Process image 3 ' },
         { type: 'image', src: './Images/jb3.png', alt: 'Process image 4' },
-        { type: 'video', src: './videos/jabey1.mp4', poster: PLACEHOLDER_IMG }
+        { type: 'video', src: './videos/jabey1.mp4', poster: './Images/fc26.jpg' }
         
       ]
     },
@@ -703,7 +703,6 @@ if (worksGrid) {
         tag: 'THE EYE OF KNUST',
         deepLink: false,
         media: [
-          
           { type: 'image', src: './Images/DJI02.jpg', alt: 'Process image 1 — TODO: describe' },
           { type: 'image', src: './Images/dji04.png', alt: 'Process image 2 — TODO: describe' },
           { type: 'image', src: './Images/dji05.png', alt: 'Process image 3 — TODO: describe' },
@@ -743,8 +742,8 @@ if (worksGrid) {
           { type: 'image', src: './Images/099.png',  },
           { type: 'image', src: './Images/100.png',  },
            { type: 'image', src: './Images/103.png', },
-          { type: 'video', src: './videos/Download(2).mp4', poster: PLACEHOLDER_IMG },
-           { type: 'video', src: './videos/Download(11).mp4', poster: PLACEHOLDER_IMG ,}
+          { type: 'video', src: './videos/Download(2).mp4', poster: './Images/fc26.jpg' },
+           { type: 'video', src: './videos/Download(11).mp4', poster:  './Images/fc26.jpg' ,}
         ]
       },
        'proj-19': {

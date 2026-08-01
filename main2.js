@@ -664,11 +664,11 @@ if (worksGrid) {
       deepLink: true,
       media: [
         { type: 'image', src: './Images/jb2.png', alt: 'Process image 1 ' },
-        { type: 'image', src:  './Images/jbb.png', alt: 'Process image 2 ' },
-        { type: 'image', src:  './Images/jb4.jpg', alt: 'Process image 3 ' },
-        { type: 'image', src:  './Images/jb3.png', alt: 'Process image 4' },
+        { type: 'image', src: './Images/jbb.png', alt: 'Process image 2 ' },
+        { type: 'image', src: './Images/jb4.jpg', alt: 'Process image 3 ' },
+        { type: 'image', src: './Images/jb3.png', alt: 'Process image 4' },
         { type: 'video', src: './videos/jabey1.mp4', poster: PLACEHOLDER_IMG }
-        // <source> left empty above — add the real video path when ready
+        
       ]
     },
     'proj-06': {
@@ -743,8 +743,8 @@ if (worksGrid) {
           { type: 'image', src: './Images/099.png',  },
           { type: 'image', src: './Images/100.png',  },
            { type: 'image', src: './Images/103.png', },
-          { type: 'video', src: './videos/Download (2).mp4', poster: PLACEHOLDER_IMG },
-           { type: 'video', src: './videos/Download (11).mp4', poster: PLACEHOLDER_IMG ,}
+          { type: 'video', src: './videos/Download(2).mp4', poster: PLACEHOLDER_IMG },
+           { type: 'video', src: './videos/Download(11).mp4', poster: PLACEHOLDER_IMG ,}
         ]
       },
        'proj-19': {
@@ -762,7 +762,7 @@ if (worksGrid) {
         tag: 'Motion Reel',
         deepLink: false,
         media: [
-          { type: 'video', src: './videos/myReel.mp4', poster: PLACEHOLDER_IMG }
+          { type: 'video', src: './videos/myReel.mp4', poster: './Images/rellpaper.jpg'}
         ]
       }
   };

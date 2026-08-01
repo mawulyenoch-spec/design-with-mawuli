@@ -654,7 +654,7 @@ if (worksGrid) {
   // PROJECT DATA — case-study modal (video projects for now)
   // `media` is an ordered array rendered top-to-bottom in the modal.
   // Swap placeholder srcs for real assets (1920x1080 recommended
-  // for the images, per your spec). `deepLink: true` makes a
+  // for the Images, per your spec). `deepLink: true` makes a
   // project shareable via ?project=<id> in the URL.
   // ─────────────────────────────────────
   const PROJECTS = {
@@ -663,10 +663,10 @@ if (worksGrid) {
       tag: 'JABEY',
       deepLink: true,
       media: [
-        { type: 'image', src: './images/jb2.png', alt: 'Process image 1 ' },
-        { type: 'image', src:  './images/jbb.png', alt: 'Process image 2 ' },
-        { type: 'image', src:  './images/jb4.jpg', alt: 'Process image 3 ' },
-        { type: 'image', src:  './images/jb3.png', alt: 'Process image 4' },
+        { type: 'image', src: './Images/jb2.png', alt: 'Process image 1 ' },
+        { type: 'image', src:  './Images/jbb.png', alt: 'Process image 2 ' },
+        { type: 'image', src:  './Images/jb4.jpg', alt: 'Process image 3 ' },
+        { type: 'image', src:  './Images/jb3.png', alt: 'Process image 4' },
         { type: 'video', src: './videos/jabey1.mp4', poster: PLACEHOLDER_IMG }
         // <source> left empty above — add the real video path when ready
       ]
@@ -738,11 +738,11 @@ if (worksGrid) {
         tag: 'NATHANIEL',
         deepLink: false,
         media: [
-          { type: 'image', src: './images/102.png',  },
-          { type: 'image', src: './images/104.png',  },
-          { type: 'image', src: './images/099.png',  },
-          { type: 'image', src: './images/100.png',  },
-           { type: 'image', src: './images/103.png', },
+          { type: 'image', src: './Images/102.png',  },
+          { type: 'image', src: './Images/104.png',  },
+          { type: 'image', src: './Images/099.png',  },
+          { type: 'image', src: './Images/100.png',  },
+           { type: 'image', src: './Images/103.png', },
           { type: 'video', src: './videos/Download (2).mp4', poster: PLACEHOLDER_IMG },
            { type: 'video', src: './videos/Download (11).mp4', poster: PLACEHOLDER_IMG ,}
         ]
@@ -927,7 +927,7 @@ if (worksGrid) {
   // ─────────────────────────────────────
   const IMAGE_PROJECTS = {
     'proj-01': { image: './Images/011.png', caption: 'The flyer emphasizes the value of customer experience, showing that 61% of customers are willing to pay at least 5% more when assured of outstanding service.' },
-    'proj-02': { image: './images/044.png', caption: ' "This campaign uplifts young girls by ensuring access to essential hygiene, fostering dignity and confidence." \n "Every donation brings hope and empowers the girl child to thrive without barriers."' },
+    'proj-02': { image: './Images/044.png', caption: ' "This campaign uplifts young girls by ensuring access to essential hygiene, fostering dignity and confidence." \n "Every donation brings hope and empowers the girl child to thrive without barriers."' },
     'proj-04': { image: './Images/033.png', caption: '' },
     'proj-05': { image: './Images/022.png', caption: '' },
     'proj-07': { image: './Images/055.jpg', caption: '' },

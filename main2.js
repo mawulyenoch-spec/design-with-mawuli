@@ -383,6 +383,10 @@ if (wrap && video) {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
           cardObserver.unobserve(entry.target);
+
+          entry.target.addEventListener('transitionend', () => {
+          entry.target.style.transitionDelay = '0s';
+        }, { once: true });
         }
       });
     },
@@ -926,11 +930,11 @@ if (worksGrid) {
   // ─────────────────────────────────────
   const IMAGE_PROJECTS = {
     'proj-01': { image: './Images/011.png', caption: 'The flyer emphasizes the value of customer experience, showing that 61% of customers are willing to pay at least 5% more when assured of outstanding service.' },
-    'proj-02': { image: './Images/044.png', caption: ' "This campaign uplifts young girls by ensuring access to essential hygiene, fostering dignity and confidence." \n "Every donation brings hope and empowers the girl child to thrive without barriers."' },
+    'proj-02': { image: './Images/044.png', caption: 'This campaign uplifts young girls by ensuring access to essential hygiene, fostering dignity and confidence." \n "Every donation brings hope and empowers the girl child to thrive without barriers.' },
     'proj-04': { image: './Images/033.png', caption: '' },
     'proj-05': { image: './Images/022.png', caption: '' },
     'proj-07': { image: './Images/055.jpg', caption: '' },
-    'proj-09': { image: './Images/Desktop13.png', caption: '© Code by Dogbey Mawuli Enoch ' },
+    'proj-09': { image: './Images/Desktop13.png', caption: '© Code by Dogbey Mawuli Enoch' },
     'proj-12': { image: PLACEHOLDER_IMG, caption: 'TODO: add a short caption for this project' },
     'proj-15': { image: PLACEHOLDER_IMG, caption: 'TODO: add a short caption for this project' }
   };

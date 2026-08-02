@@ -552,6 +552,11 @@ body.menu-open { overflow: hidden; }
   opacity: 1;
 }
 
+/* .project-card.reveal-card.in-view:hover {
+  transform: scale(1.03);
+  z-index: 2;
+} */
+
 .project-card {
   position: relative;
   display: block;
@@ -568,15 +573,11 @@ body.menu-open { overflow: hidden; }
   transition: transform 0.35s ease;
 }
  
-.project-card:hover {
+.project-card.reveal-card:hover {
   transform: scale(1.03);
   z-index: 2;
 }
- 
-.project-card:focus-visible {
-  outline: 2px solid var(--color-lime);
-  outline-offset: 3px;
-}
+
  /* <second grid> */
 
 /* Wide variant — spans 2 grid columns, same row height as its

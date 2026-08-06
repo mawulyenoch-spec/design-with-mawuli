@@ -446,7 +446,7 @@ body.menu-open { overflow: hidden; }
    text-align: center;
   }
  .notes-card h2 {
-  /* color: #80FF00; */
+  color: #80FF00;
     font-size: 30px;
     /* font-weight: 700; */
     margin-bottom: 20px;
@@ -459,6 +459,9 @@ body.menu-open { overflow: hidden; }
   /* font-family: 'gotham-book', sans-serif; */
 }
   
+.accent{
+  color: #80FF00;
+}
 
 
   .portrait {

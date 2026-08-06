@@ -1071,7 +1071,7 @@ body.modal-open {
     display: inline-block;
     background-color: var(--accent);
     color: var(--black);
-    font-family: 'Barlow', sans-serif;
+    font-family: 'gotham', sans-serif;
     font-size: 14px;
     font-weight: 600;
     padding: 12px 24px;
@@ -1082,6 +1082,8 @@ body.modal-open {
  
   .works-cta-btn:hover {
     transform: scale(1.05);
+    background-color: var(--black);
+    color: var(--accent);
   }
  
   .works-cta-btn:focus-visible {

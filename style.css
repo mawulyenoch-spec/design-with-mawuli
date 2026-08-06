@@ -408,26 +408,17 @@ body:not(.start-page-animation) .hero-character img {
   /* margin: 0 auto; */
 }
 .hero {
-  /* max-width:1440px;      */
   margin: 0 auto;
   position: relative;
    height: 100vh;
-  /* margin-bottom: 0; */
   padding-top: var(--nav-height);
-  
-
-  /* display: grid; */
-  /* grid-template-columns: 220px 1fr 320px; */
-  /* grid-template-columns: 1fr 1fr 1fr ;
-  grid-template-rows: 1fr auto; */
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: black;
   /* border: yellow 2px solid ; */
-
 }
 
 /* ── Left objects column ───────────────────────────────── */
@@ -2094,6 +2085,20 @@ transition: 0.4s ease;
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE — Desktop Laptop (1440px and above)
 ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1600px) {
+   .object-worm  {
+  left: 10px;
+  }
+  .hero-content{
+  /* margin-top: 50px; */
+  top: 200px;
+  }
+  .section7 img{
+  height: 705px;
+}
+}
+
  @media (max-width:1440px) {
   .hero-character img {
   height: 700px;

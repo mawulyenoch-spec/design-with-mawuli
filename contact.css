@@ -412,6 +412,13 @@ body.menu-open { overflow: hidden; }
   align-items: center;
   justify-content: center;
 }
+.contact-hero__badge img {
+  width: 100%;
+  border:#80FF00 1px solid;
+  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .contact-hero__badge-icon {
   width: 55%;
@@ -678,6 +685,7 @@ body.menu-open { overflow: hidden; }
   .contact-hero {
     padding: 160px 80px 120px;
   }
+
 }
 
 @media (max-width: 1024px) {
@@ -687,6 +695,11 @@ body.menu-open { overflow: hidden; }
 
   .contact-hero__title {
     font-size: clamp(36px, 5.5vw, 52px);
+  }
+
+  .contact-hero__badge {
+    width: 80px;
+    height: 80px;
   }
 
   .contact-form {
@@ -707,6 +720,8 @@ body.menu-open { overflow: hidden; }
   .contact-hero__title-row {
     gap: 16px;
   }
+
+
 
   .contact-hero__badge {
     width: 60px;
@@ -757,7 +772,11 @@ body.menu-open { overflow: hidden; }
     width: 48px;
     height: 48px;
   }
+.contact-hero__badge img {
 
+  border:#80FF00 2px solid;
+  
+}
   .contact-form {
     gap: 32px;
   }
@@ -833,6 +852,9 @@ body.menu-open { overflow: hidden; }
     justify-content: space-between;
     width: 100%;
     
+  }
+  .nav-avatar {
+ display: none;
   }
   .nav-links,
   .nav-cta {

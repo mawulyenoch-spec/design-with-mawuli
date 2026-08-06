@@ -227,10 +227,10 @@ body.menu-open { overflow: hidden; }
   padding: 0 70px;
   /* max-width: 1440px; */
   /* subtle dark glass */
-  background: rgba(8, 8, 8, 0.85);
+  background-color: black;
+  /* background: rgba(8, 8, 8, 0.85); */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
    /* ...your existing properties... */
   transition:
     transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
@@ -373,7 +373,8 @@ body.menu-open { overflow: hidden; }
 .contact-hero {
   position: relative;
   min-height: 100vh;
-  background: #000;
+  background-color: black;
+  /* background: #000; */
   overflow: hidden;
   padding: 180px 120px 140px;
 
